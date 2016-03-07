@@ -1,1 +1,5 @@
-console.log("Hey, the javascript file works!");
+function Hello() {
+	console.log("Hey, the javascript file works!");
+}
+
+Hello();
