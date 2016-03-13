@@ -1,0 +1,29 @@
+html, header, p {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	font-size: 100%;
+	font: inherit;
+}
+
+html {
+	font-family: Arial, Sans-Serif;
+}
+
+h1 {
+	font-size: 40px;
+	margin: 0 auto;
+	color: #00008B;
+	text-align: center;
+}
+
+#subtitle {
+	padding-top: 20px;
+	color: #8B0000;
+	text-align: center;
+}
+
+p {
+	padding-top: 10px;
+	text-align: center;
+}
