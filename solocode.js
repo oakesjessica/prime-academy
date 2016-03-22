@@ -15,7 +15,7 @@ var stringList = ["March", "April", "May"];
 //console.log("Months listed are " + months);
 
 //***Concatenating a String Method***//
-var strmonths = ""
+var strmonths = "";
 for (var i = 0; i < stringList.length; i++) {
   strmonths += stringList[i] + ", ";
 }
