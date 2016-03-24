@@ -36,7 +36,7 @@ for(var i = 0; i < employees.length; i++) {
      break;
   }
 
-  if(employees[1].length == 4) {
+  if(employee[1].length == 4) {
    perBonus += .05;
   }
 
