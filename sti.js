@@ -1,22 +1,31 @@
 //  JS Group Solo Project
 //  Erika Klein, Travis Ingram, Lisa Mabley, Jessica Oakes
 
-var atticus = ["Atticus", "2405", "47000", 3];
-var jem = ["Jem", "62347", "63500", 4];
-var boo = ["Boo", "11435", "54000", 3];
-var scout = ["Scout", "6243", "74750", 5];
+var atticus = new Person("Atticus", "2405", "47000", 3);
+var jem = new Person("Jem", "62347", "63500", 4);
+var boo = new Person("Boo", "11435", "54000", 3);
+var scout = new Person("Scout", "6243", "74750", 5);
 
 var employees = [atticus, jem, boo, scout];
-//loop here
 
-for(var i = 0; i < employees.length; i++) {
-  var employee = employees[i];
-  var name = employee[0];
-  var startSal = parseInt(employee[2]);
+function Person(name, emplID, salary, rating) {
+  this.name = name;
+  this.emplID = emplID;
+  this.salary = salary;
+  this.rating = rating;
+}
+
+for(var it = 0; it < employees.length; it++) {
+  var employee = employees[it];
+  var emplName = employees[it].name;
+  var employeeNum = employees[it].emplID;
+  var startSal = parseInt(employees[it].salary);
+  var reviewScore = employees[it].rating;
+
   var adjustedSal = 0;
-  var reviewScore = employee[3];
   var perBonus = 0;
   var bonusAmount = 0;
+  var finalObj = {};
 
   switch(reviewScore) {
    case 3:
@@ -36,12 +45,12 @@ for(var i = 0; i < employees.length; i++) {
      break;
   }
 
-  if(employee[1].length == 4) {
-   perBonus += .05;
+  if(employeeNum.length == 4) {
+   perBonus += 0.05;
   }
 
   if (getAdjustedSal(startSal, perBonus) > 65000) {
-   perBonus -= .01;
+   perBonus -= 0.01;
   }
 
   if (perBonus > 0.13) {
@@ -56,16 +65,20 @@ for(var i = 0; i < employees.length; i++) {
   bonusAmountString = "$" + bonusAmount.toLocaleString();
   adjustedSalString = "$" + adjustedSal.toLocaleString();
 
-  function getBonusAmount(salary, bonusPercentage) {
-    return Math.round(bonusPercentage * salary);
+  finalObj.Name = emplName;
+  finalObj.bonusPercentage = bonusString;
+  finalObj.annualAC = adjustedSalString;
+  finalObj.bonus = bonusAmountString;
 
-  }
+  console.log(finalObj);
 
-  function getAdjustedSal(salary, bonusPercentage) {
-    return salary + getBonusAmount(salary, bonusPercentage);
+}
 
-  }
+function getBonusAmount(salary, bonusPer) {
+  return Math.round(bonusPer * salary);
+}
 
-  console.log([name, bonusString, adjustedSalString, bonusAmountString]);
+function getAdjustedSal(salary, bonusPer) {
+  return salary + getBonusAmount(salary, bonusPer);
 
 }
