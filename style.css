@@ -1,0 +1,48 @@
+html, section {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: arial, "Sans-Serif";
+  margin: 0px 100px;
+}
+
+#heading {
+  text-align: center;
+  padding: 0px 0px 3px 0px;
+  border-bottom: 2px black solid;
+}
+
+#heading h1, h3 {
+  margin: 0px;
+}
+
+#heading h1 {
+  padding: 20px 0px 0px 0px;
+}
+
+#heading h3 {
+  padding: 5px 0px 0px;
+}
+
+#heading p {
+  margin: 10px 0px 0px 0px;
+  padding: 0px 30px 0px 0px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+#claimsList {
+  margin: 10px auto;
+  padding: 10px 0px 0px 30px;
+}
+
+#claimsList li {
+  list-style-type: none;
+}
+
+#claimsList p {
+  font-weight: bold;
+}
