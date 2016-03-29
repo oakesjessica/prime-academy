@@ -1,3 +1,4 @@
+//  Employee Information Form JS  //
 
 function printList(anObj) {
   $("#display > ol").append("<li>" + "Name: " + anObj.firstname + " " + anObj.lastname +"</li>");
@@ -6,8 +7,8 @@ function printList(anObj) {
 
   lastli.append("<span>" + "EmplID: " + anObj.emplID + "</span>");
   lastli.append("<span>" + "Title: " + anObj.jobtitle + "</span>");
-  lastli.append("<span>" + "Review Score: " + anObj.reviewscore + "</span>");
-  lastli.append("<span>" + "Salary: " + anObj.jobsalary + "</span>");
+  lastli.append("<span>" + "Review Score: " + determineColor(anObj.reviewscore) + "</span>");
+  lastli.append(banannaSandwich + "<span>" + "Salary: $" + anObj.jobsalary + "</span>");
 
   var remove = $("<input type=\"button\" value=\"Remove\" class=\"removeButton\"/>");
   lastli.append(remove);
@@ -18,6 +19,34 @@ function printList(anObj) {
   console.log(anObj);
 }
 
+function determineColor(review) {
+  var styleString = "color:red";
+
+  switch(parseInt(review)) {
+    case 1:
+      styleString = "color:red";
+      break;
+    case 2:
+      styleString = "color:pink";
+      break;
+
+    case 3:
+      styleString = "color:orange";
+      break;
+
+    case 4:
+      styleString = "color:blue";
+      break;
+
+    case 5:
+      styleString = "color:green";
+      break;
+  }
+  console.log(styleString);
+  var divString = "<span><div style=\"" + styleString + "\">" + review + "</div></span>";
+  return divString;
+
+}
 
 $(function() {
 
