@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+  <head>
+    <title>jQuery Peer Challenge</title>
+    <meta charset="utf-8" />
+
+    <!--Libraries/Frameworks-->
+    <script src="jquery-2.2.2.min.js"></script>
+
+    <!--Development Files-->
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+  </head>
+
+  <body>
+    <h1 id="title">Employee Information Form</h1>
+
+    <div>
+      <form action="/login" method="post" id="myForm">
+
+        <br/>
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="nameLast" id="lastname" />
+
+        <br/>
+        <label for="firstname">First Name:</label>
+        <input type="text" name="nameFirst" id="firstname" />
+
+        <br/>
+        <label for="emplID">Employee ID:</label>
+        <input type="text" name="IDempl" id="emplID" />
+
+        <br/>
+        <label for="jobtitle">Title:</label>
+        <input type="text" name="titleJob" id="jobtitle" />
+
+        <br/>
+        <label for="reviewscore">Last Review Score:</label>
+        <input type="number" name="scorereview" id="reviewscore" />
+
+        <br/>
+        <label for="jobsalary">Salary: $</label>
+        <input type="text" name="salaryjob" id="jobsalary" />
+
+        <br/>
+        <input type="submit" id="submit"/>
+      </form>
+      <div id="display">
+      </div>
+    </div>
+  </body>
+</html>

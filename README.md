@@ -10,22 +10,26 @@ Make a form that can capture and store employee information:
 - Employee Number
 - Title
 - Last Review Score
-- Salary 
+- Salary
 
 Store that information in an object.
 
 Then, with that information captured, construct a list of the most current employee information. Meaning that there should be a full list of employees represented on the screen.
 
+
+
+
+
 In addition to the employee information add a 'remove' button next to each employee's information. Clicking the 'remove' button will remove that specific employee from the DOM.
 
-In the review score section, implment some sort of color indicator based on their review. The employee reviews should only be able to be 1 - 5. 5 would indicate a good score, 1 would be poor. The way you display this is up to you. 
+In the review score section, implment some sort of color indicator based on their review. The employee reviews should only be able to be 1 - 5. 5 would indicate a good score, 1 would be poor. The way you display this is up to you.
 
 Some potential methods of implementing the color indicator are:
 
 - highlighting the entire `li` or `div` that the employee information is in
 - or adding a different colored number for each score as it is displayed.
 
-The system need not persist when the page refresh. Meaning that a page refresh will reload the entire screen. 
+The system need not persist when the page refresh. Meaning that a page refresh will reload the entire screen.
 
 Your solution should be as visually appealing as possible, and there will be some consideration of styling when you submission is reviewed. Just using the base styles isn't enough.
 
