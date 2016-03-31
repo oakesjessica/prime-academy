@@ -1,7 +1,7 @@
-var peerArray = ["lisa", "max","Kyle", "suzanna","Chris. R", "Jessica", "Jennifer", "taylor", "Chris T", "erika", "sasha",
-"amy","russell", "libby","courtney", "peter", "cari", "oliver","travis"];
+var peerArray = ["Lisa", "Max","Kyle", "Suzanna","Chris. R", "Jessica", "Jennifer", "Taylor", "Chris T", "Erika", "Sasha",
+"Amy","Russell", "Libby","Courtney", "Peter", "Cari", "Oliver","Travis"];
 
-var groupArray =["Group Banana (1)", "Group Bannana (2)", "Group Bannana (3)", "Group Plantain (4)", "Group Access Key (5)", "Group ContentEditable (6)", "Group Draggable (7)", "Group contextMenu (8)", "Group Dropzone (9)", "Group SpellCheck (10)"];
+var groupArray =["Tab Index", "Focus", "Title", "On Click", "Access Key", "ContentEditable", "Draggable", "contextMenu", "Dropzone", "SpellCheck"];
 
 function shuffle(array){
  var currentIndex = array.length;
@@ -17,15 +17,17 @@ function shuffle(array){
 return array;
 
 }
-console.log(shuffle(peerArray));
 
 
 var groupNum = 0;
 $(function(){
  $("button").on("click", function() {
-   var buttonId = $(this).parent().attr("id");
+
+   var buttonId = $(this).parent().attr("id");  // Grab parent ID
 
    if (buttonId == "generate") {
+
+     $("#display").empty(); // Clear display
 
      // If number is not selected, alert user
      if (groupNum === 0) {
@@ -33,24 +35,33 @@ $(function(){
      }
      else {
        var currentGroup;
-       console.log('Create groups: ' + shuffle(peerArray));
 
        // Append # of group headers to groupNum, taking names from groupArray
        for(var it = 0; it<groupNum; it++){
-         $("#displayheaders").append("<div id=\"G" + (it + 1) +"\" class=\"groupheadings\">" + " " + groupArray[it] + "</div>");
+         $("#display").append("<div id=\"G" + (it + 1) +"\" class=\"groups\"><h1>" + " " + groupArray[it] + "</h1></div>");
        }
-       
+
        // Appending shuffled array names to groups
        for (var gr = 0; gr < peerArray.length; gr++) {
          currentGroup = gr % groupNum;
-         console.log("groupNum" + groupNum + " currentGroup" + currentGroup);
-         $("#G" + (currentGroup+1)).append("<p>" + peerArray[gr] + "</p>");
+
+        var groupSelector = "#G" + (currentGroup+1);
+
+         $(groupSelector).append("<p>" + peerArray[gr] + "</p>");
+
+        //  console.log($(groupSelector + " p").last());
+
+         $('#display').hide().fadeIn();
+         $(groupSelector + " p").last().hide().delay(gr * 30).fadeIn();
+
+        //  $(groupSelector + " p").last().show().delay(gr * 60);
+
        }
      }
    }
    else {
      // Clear display
-     $("#displayheaders").empty();
+     $("#display").empty();
 
      // Make variable groupNum equal to # of groups selected (type num)
      groupNum = parseInt(buttonId);
