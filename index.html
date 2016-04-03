@@ -10,26 +10,34 @@
     <!-- Development Files -->
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css"/>
+
+
   </head>
   <body>
     <header>
-      <h1>OMDb Movie Search</h1>
-      <button id="showAllMovies">Hide All Movies</button>
-      <input type="search" id="movieInput" placeholder="Title (required)" />
-      <input type="search" id="yearRel" placeholder="Year (opt)" />
-      <select name="omdb-type" id="movieType">
-        <option selected></option>
-        <option>Movie</option>
-        <option>Series</option>
-        <option>Episode</option>
-      </select>
-      <button id="search">Search</button>
-      <button id="faq">FAQ</button>
-      <button id="clear">Clear Movies Search</button>
+      <section id="logo">
+        <h1>OMDb</h1>
+        <h2>Movie Search!</h2>
+      </section>
+      <section id="userInput">
+        <input type="search" id="title" placeholder="Title (required)" />
+        <input type="search" id="year" placeholder="Year (opt)" />
+        <select name="omdb-type" id="type">
+          <option selected></option>
+          <option>Movie</option>
+          <option>Series</option>
+          <option>Episode</option>
+        </select>
+        <button id="search">Search</button>
+        <button id="hideMovies">Hide Movies</button>
+        <button id="clear">Clear Display</button>
+        <button id="faqButton">Show FAQ</button>
+      </section>
     </header>
+    <section id="faqs"></section>
     <section class="movies">
-      <section id="myMovies"></section>
-      <section id="display"></section>
+      <section id="myDisplay"></section>
+      <section id="searchDisplay"></section>
     </section>
   </body>
 </html>

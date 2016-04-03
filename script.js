@@ -27,61 +27,57 @@ $(function() {
     var movieYear = "";
     var movieType = "";
 
-    movieTag = $("#movieInput").val().replace(/ /g, "+");
-    movieYear = $("#yearRel").val();
-    movieType = $("#movieType").val().toLowerCase();
+    movieTag = $("#title").val().replace(/ /g, "+");
+    movieYear = $("#year").val();
+    movieType = $("#type").val().toLowerCase();
     if (movieTag === "") {
       alert("Please enter a title!");
     }
     else {
-      console.log(movieTag, movieType, movieYear);
       getMovieInfo(movieTag, movieType, movieYear);
     }
   });
 
-  //  Search Enter Button
-  $("#movieInput, #yearRel").keypress(function(event) {
+  //  Search Enter Button for title/year inputs
+  $("#title, #year").keypress(function(event) {
     var movieTag = "";
     var movieYear = "";
     var movieType = "";
     var code = event.which;
     if (code === 13) {
-      movieTag = $("#movieInput").val().replace(/ /g, "+");
-      movieYear = $("#yearRel").val();
-      movieType = $("#movieType").val().toLowerCase();
+      movieTag = $("#title").val().replace(/ /g, "+");
+      movieYear = $("#year").val();
+      movieType = $("#type").val().toLowerCase();
       if (movieTag === "") {
         alert("Please enter a title!");
       }
       else {
-        console.log(movieTag, movieType, movieYear);
         getMovieInfo(movieTag, movieType, movieYear);
       }
     }
   }); //  Movie Search Enter Key event
 
-
-
-  $("#showAllMovies").on("click", function() {
-    if ($(this).text() === "Hide All Movies") {
-      $(this).text("Show All Movies");
+  $("#hideMovies").on("click", function() {
+    if ($(this).text() === "Hide Movies") {
+      $(this).text("Show Movies");
       $(".movies").slideToggle("show");
     }
     else {
-      $(this).text("Hide All Movies");
+      $(this).text("Hide Movies");
       $(".movies").slideToggle("show");
     }
-  }); //  showAllMovies button
+  }); //  showMyMovies button
 
   $("#clear").on("click", function() {
-    if (($("#display").children().length === 0)) {
+    if (($("#searchDisplay").children().length === 0)) {
       alert("Movies have been cleared");
     }
     else {
-      $("#display").empty();
+      $("#searchDisplay").empty();
     }
   }); //  Clear Button
 
-  $("#faq").on("click", function() {
+  $("#faqButton").on("click", function() {
     alert("Coming soon ;)");
   }); //  FAQ Button
 
@@ -102,19 +98,18 @@ $(function() {
 
   function displayMyMovies(movieObj) {
     // console.log(myMovieNum, searchMovieNum);
-    $("#myMovies").append("<div id=\"myMovie-" + (myMovieNum) +"\" class=\"movies\"></div>");
-    var myMovieSelector = "#myMovie-" + (myMovieNum);
-    $(myMovieSelector).append("<img src=\"" + movieObj.Poster + "\">",
+    $("#myDisplay").append("<div id=\"myMovie-" + (myMovieNum) +"\" class=\"movies\"></div>");
+    $("#myMovie-" + (myMovieNum)).append("<img src=\"" + movieObj.Poster + "\">",
                               "<h3>" + movieObj.Title + "</h3>",
-                              "<p> Directed by: " + movieObj.Director + "</p>",
-                              "<p> Date Released: " + movieObj.Released + "</p>",
-                              "<p> Run-Time: " + movieObj.Runtime + "</p>",
-                              "<p> Genre: " + movieObj.Genre + "</p>",
-                              "<p> IMDB Rating: " + movieObj.Rated + "</p>",
-                              "<p> Story By: " + movieObj.Writer + "</p>",
-                              "<p> Actors: " + movieObj.Actors + "</p>",
-                              "<p> Language(s): " + movieObj.Language + "</p>",
-                              "<p> Plot: " + movieObj.Plot + "</p>");
+                              "<p><b> Directed by:</b> " + movieObj.Director + "</p>",
+                              "<p><b> Date Released:</b> " + movieObj.Released + "</p>",
+                              "<p><b> Run-Time:</b> " + movieObj.Runtime + "</p>",
+                              "<p><b> Genre:</b> " + movieObj.Genre + "</p>",
+                              "<p><b> IMDB Rating:</b> " + movieObj.Rated + "</p>",
+                              "<p><b> Story By:</b> " + movieObj.Writer + "</p>",
+                              "<p><b> Actors:</b> " + movieObj.Actors + "</p>",
+                              "<p><b> Language(s):</b> " + movieObj.Language + "</p>",
+                              "<p><b> Plot:</b> " + movieObj.Plot + "</p>");
 
     $("#myMovie-" + myMovieNum).css({"margin" : "5px", "border" : "1px solid pink", "padding" : "5px"});
 
@@ -124,19 +119,18 @@ $(function() {
 
   function displaySearchMovies(movieObj) {
     // console.log(myMovieNum, searchMovieNum);
-    $("#display").append("<div id=\"Movie-" + (searchMovieNum) +"\" class=\"movies\"></div>");
-    var searchMovieSelector = "#Movie-" + (searchMovieNum);
-    $(searchMovieSelector).append("<img src=\"" + movieObj.Poster + "\">",
+    $("#searchDisplay").append("<div id=\"Movie-" + (searchMovieNum) +"\" class=\"movies\"></div>");
+    $("#Movie-" + (searchMovieNum)).append("<img src=\"" + movieObj.Poster + "\">",
                               "<h3>" + movieObj.Title + "</h3>",
-                              "<p> Directed by: " + movieObj.Director + "</p>",
-                              "<p> Date Released: " + movieObj.Released + "</p>",
-                              "<p> Run-Time: " + movieObj.Runtime + "</p>",
-                              "<p> Genre: " + movieObj.Genre + "</p>",
-                              "<p> IMDB Rating: " + movieObj.Rated + "</p>",
-                              "<p> Story By: " + movieObj.Writer + "</p>",
-                              "<p> Actors: " + movieObj.Actors + "</p>",
-                              "<p> Language(s): " + movieObj.Language + "</p>",
-                              "<p> Plot: " + movieObj.Plot + "</p>");
+                              "<p><b> Directed by:</b> " + movieObj.Director + "</p>",
+                              "<p><b> Date Released:</b> " + movieObj.Released + "</p>",
+                              "<p><b> Run-Time:</b> " + movieObj.Runtime + "</p>",
+                              "<p><b> Genre:</b> " + movieObj.Genre + "</p>",
+                              "<p><b> IMDB Rating:</b> " + movieObj.Rated + "</p>",
+                              "<p><b> Story By:</b> " + movieObj.Writer + "</p>",
+                              "<p><b> Actors:</b> " + movieObj.Actors + "</p>",
+                              "<p><b> Language(s):</b> " + movieObj.Language + "</p>",
+                              "<p><b> Plot:</b> " + movieObj.Plot + "</p>");
 
     $("#Movie-" + searchMovieNum).css({"margin" : "5px", "border" : "1px solid pink", "padding" : "5px"});
 

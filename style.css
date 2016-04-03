@@ -1,45 +1,76 @@
-@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Play:700);
+@import url(https://fonts.googleapis.com/css?family=Orbitron:900);
 
-html, body, p, h3 {
+html, body, p, h1, h2, h3 {
   padding: 0px;
   margin: 0px;
   font-family: arial, sans-serif;
 }
 
-header h1, header h2 {
-  padding: 0px;
-  margin: 0px;
-  border: 1px solid black;
+h1, h2 {
+  font-family: "Orbitron";
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 12px;
 }
 
 header {
   width: 100%;
-  background: teal;
+  background: gray;
   position: fixed;
   z-index: 1;
   top: 0;
-  padding: 0px 0px 10px 0px;
+  padding: 0px 0px 0px 0px;
+}
+
+#logo {
+  display: inline;
+  float: left;
+  padding: 5px;
+  height: 40px;
+  margin: 5px 0px 0px 30px;
+}
+
+#userInput {
+  position: relative;
+  float: right;
+  display: inline;
+  margin: 11px 0px 0px 0px;
+  padding: 0px 20px 0px 0px;
+}
+
+#faqs {
+  margin-top: 55px;
+  position: relative;
+  padding: 20px;
+  border: 1px solid blue;
 }
 
 .movies {
   background: #EEEEEE;
   border: 1px solid red;
-  padding: 10px;
   position: relative;
-  margin-top: 150px;  /*after fix 159*/
 }
 
-#display {
-  border: 1px solid green;
-  padding: 20px;
-}
-
-#myMovies {
+#myDisplay, #searchDisplay {
   border: 1px solid purple;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.movies h3 {
+  font-family: Herculanum;
+  font-size: 19px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .movies p {
@@ -55,14 +86,50 @@ header {
   /*height: auto;*/
 }
 
-.movies h3 {
-  /*font-family: 'Poiret One', cursive;*/
-  font-family: Herculanum;
-  font-size: 19px;
-  font-weight: bold;
-  text-align: center;
-}
-#myMovies div {
+#myDisplay div, #searchDisplay div {
   width: 350px;
   background: #FFFFFF;
+}
+
+input[type="search"], select, button {  /*All search fields*/
+  vertical-align: top;
+  border-radius: 5px;
+  height: 35px;
+  margin: 2px 0px;
+  border: none;
+  outline: none;
+}
+
+button, #type { /*buttons/type font*/
+  font-family: "Play";
+}
+
+button {  /*buttons*/
+  border-radius: 5px;
+  background: #FFFFFF;
+  border: none;
+  outline: none;
+}
+
+#title {  /*Movie title search input*/
+  width: 250px;
+}
+
+#year { /*Year search input*/
+  width: 75px;
+}
+
+#search {
+  width: 70px;
+  margin-right: 200px;
+}
+
+#hideMovies, #clear, #faqButton { /*Show/Hide Movies button*/
+  width: 50px;
+}
+
+input[type="search"] {
+  font-size: 11px;
+  border-radius: 4px;
+  padding: 3px;
 }
