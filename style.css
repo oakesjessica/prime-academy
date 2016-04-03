@@ -1,0 +1,42 @@
+/*body {
+  margin: 40px;
+  padding: 0;
+  font-family: arial, sans-serif;
+}
+h1 {
+  border-bottom: 2px solid black;
+  padding-bottom: 4px;
+  text-align: center;
+}
+#display-random, #display-search {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.myDivs {
+  min-width: 300px;
+}*/
+
+body {
+  font-family: arial;
+}
+
+.selections {
+  display: flex;
+  flex-direction: row;
+  flex-wrap;
+  justify-content: center;
+  border: 1px solid black;
+  font-size: 12px;
+}
+
+.buttons {
+  padding-left: 50px;
+}
+
+#display {
+  padding-top: 50px;
+  margin: 0 auto;
+}
