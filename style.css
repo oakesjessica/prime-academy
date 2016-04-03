@@ -8,7 +8,7 @@ body {
 }
 
 header {
-  background: #008080;
+  background: #989898;
   top: 0px;
   padding: 0px 0px 5px 0px;
 }
@@ -19,7 +19,7 @@ h1, h2 {
 
 h1 {
   margin: 0px;
-  padding: 6px 0px;
+  padding: 0px 0px 6px 0px;
 }
 
 h2 {
@@ -34,7 +34,6 @@ h2 {
   justify-content: center;
 }
 
-
 .search {
   display: inline-block;
   padding: 0px 0px 0px 20px;
@@ -48,7 +47,8 @@ button {
   border: none;
   border-radius: 4px;
   outline: none;
-  background-color: #D3D3D3;
+  background-color: #008080;
+  color: #FFFFFF;
   transition: background 0.18s ease-in, color 0.18s ease-in;
 }
 
@@ -64,11 +64,11 @@ input[type="search"] {
 }
 
 button:hover {
-  background:#000000;
+  background:#07AA9E;
   color: #FFFFFF;
 }
 
 #display {
-  margin: 20px;
+  margin: 10px 20px;
   padding: 20px;
 }
