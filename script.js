@@ -17,24 +17,24 @@ $(function() {
 
   //  Clear display upon click
   $("#clear").on("click", function() {
-    if (!$("#display").empty()) {
-      $("#display").empty();
-    }
-    else {
+    //  Send alert if display is not empty, otherwise empty it out
+    if ($("#display").children().length === 0) {
       alert("Giph's have been cleared!");
     }
-  });
+    else {
+      $("#display").empty();
+    }
+  }); //  Clear Display Button
 
   $("#faq").on("click", function() {
     alert("Coming soon :)");
-  });
+  }); //  FAQ Button
 
   $("#tagInput").keypress(function(event) {
     var giphyTag = "";
     var code = event.which;
     if (code == 13) {
       giphyTag = $("#tagInput").val().replace(/ /g, "+");
-      console.log(giphyTag);
       getRandomGiphy(giphyTag);
     }
   }); //  Random/Tag Search Enter Key event
@@ -44,7 +44,6 @@ $(function() {
     var code = event.which;
     if (code == 13) {
       giphySearch = $("#regInput").val().replace(/ /g, "+");
-      console.log(giphySearch);
       getSearchGiphy(giphySearch);
     }
   }); //  Normal Search Enter Key event

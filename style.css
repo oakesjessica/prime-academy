@@ -76,7 +76,7 @@ input[type="search"] {
   border: none;
   border-radius: 4px;
   outline: none;
-  background-color: #008080;
+  background-color: #07AA9E;
   color: #FFFFFF;
   transition: background 0.18s ease-in, color 0.18s ease-in;
 }
@@ -84,6 +84,10 @@ input[type="search"] {
 #randomButton:hover, #searchButton:hover, #faq:hover, #clear:hover {
   background:#07AA9E;
   color: #FFFFFF;
+}
+
+#faq:hover, #clear:hover {
+  background: #008080;
 }
 
 #display {
