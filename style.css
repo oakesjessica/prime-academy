@@ -1,10 +1,14 @@
-html, body, p {
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+html, body, p, h3 {
   padding: 0px;
   margin: 0px;
   font-family: arial, sans-serif;
 }
 
-header {
+header h1, header h2 {
+  padding: 0px;
+  margin: 0px;
   border: 1px solid black;
 }
 
@@ -18,10 +22,11 @@ header {
 }
 
 .movies {
+  background: #EEEEEE;
   border: 1px solid red;
   padding: 10px;
   position: relative;
-  margin-top: 200px;  /*after fix 159*/
+  margin-top: 150px;  /*after fix 159*/
 }
 
 #display {
@@ -37,44 +42,27 @@ header {
   justify-content: center;
 }
 
-#myMovies p {
-  padding: 10px 0px 0px;
+.movies p {
+  padding: 5px 0px 0px;
   font-size: 12px;
 }
 
 .movies img {
   height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   /*height: auto;*/
 }
+
+.movies h3 {
+  /*font-family: 'Poiret One', cursive;*/
+  font-family: Herculanum;
+  font-size: 19px;
+  font-weight: bold;
+  text-align: center;
+}
 #myMovies div {
-  width: 300px;
+  width: 350px;
+  background: #FFFFFF;
 }
-
-
-
-
-/*#myMovies {
-  padding: 20px;
-}
-
-#display {
-  border: 1px solid green;
-  padding: 20px;
-}
-
-img {
-  max-width: 20%;
-  height: auto;
-}
-
-#myMovies, #display {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-#myMovies p, #display p {
-  padding: 3px;
-  margin: 0px;
-  font-size: 12px;
-}*/

@@ -39,24 +39,38 @@ $(function() {
     }
   });
 
-  // $("#movieInput").keypress(function(event) {
-  //   var movieTag = "";
-  //   var movieYear = "";
-  //   var movieType = "";
-  //   var code = event.which;
-  //   if (code == 13) {
-  //     movieTag = $("#movieInput").val().replace(/ /g, "+");
-  //     movieYear = $("#yearRel").val();
-  //
-  //     if (movieTag === "") {
-  //       alert("Please enter a title!");
-  //     }
-  //     else {
-  //       console.log(movieTag, movieYear);
-  //       getMovieInfo(movieTag, movieType, movieYear);
-  //     }
-  //   }
-  // }); //  Movie Search Enter Key event
+  //  Search Enter Button
+  $("#movieInput, #yearRel").keypress(function(event) {
+    var movieTag = "";
+    var movieYear = "";
+    var movieType = "";
+    var code = event.which;
+    if (code === 13) {
+      movieTag = $("#movieInput").val().replace(/ /g, "+");
+      movieYear = $("#yearRel").val();
+      movieType = $("#movieType").val().toLowerCase();
+      if (movieTag === "") {
+        alert("Please enter a title!");
+      }
+      else {
+        console.log(movieTag, movieType, movieYear);
+        getMovieInfo(movieTag, movieType, movieYear);
+      }
+    }
+  }); //  Movie Search Enter Key event
+
+
+
+  $("#showAllMovies").on("click", function() {
+    if ($(this).text() === "Hide All Movies") {
+      $(this).text("Show All Movies");
+      $(".movies").slideToggle("show");
+    }
+    else {
+      $(this).text("Hide All Movies");
+      $(".movies").slideToggle("show");
+    }
+  }); //  showAllMovies button
 
   $("#clear").on("click", function() {
     if (($("#display").children().length === 0)) {
@@ -70,7 +84,6 @@ $(function() {
   $("#faq").on("click", function() {
     alert("Coming soon ;)");
   }); //  FAQ Button
-
 
   /*Function to get movie information by search*/
   function getMovieInfo(title, type, year) {
