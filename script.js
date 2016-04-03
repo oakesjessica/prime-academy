@@ -15,6 +15,20 @@ $(function() {
     getSearchGiphy(giphySearch);
   }); //  Normal Search Button
 
+  //  Clear display upon click
+  $("#clear").on("click", function() {
+    if (!$("#display").empty()) {
+      $("#display").empty();
+    }
+    else {
+      alert("Giph's have been cleared!");
+    }
+  });
+
+  $("#faq").on("click", function() {
+    alert("Coming soon :)");
+  });
+
   $("#tagInput").keypress(function(event) {
     var giphyTag = "";
     var code = event.which;
@@ -35,15 +49,16 @@ $(function() {
     }
   }); //  Normal Search Enter Key event
 
+ //  Clear field when clicked again, only works if input field is not selected
+  $("#tagInput").focus(
+   function(){
+     $(this).val("");
+  }); //  clear #tagInput
+
   $("#regInput").focus(
     function(){
       $(this).val("");
-  }); //  Clear field when clicked again, only works if input field is not selected
-
-  $("#tagInput").focus(
-    function(){
-      $(this).val("");
-  }); //  Clear field when clicked again, only works if input field is not selected
+  }); //  clear #regInput
 
   /*  Random/Tag Giphy Search function
   **  Empty the display, append picture received from random API

@@ -39,7 +39,7 @@ h2 {
   padding: 0px 0px 0px 20px;
 }
 
-button {
+#searchButton, #randomButton {
   vertical-align: top;
   font-weight: bold;
   height: 35px;
@@ -63,7 +63,25 @@ input[type="search"] {
   outline: none;
 }
 
-button:hover {
+.otherButtons {
+  display: flex;
+  justify-content: center;
+}
+
+#faq, #clear {
+  vertical-align: top;
+  font-weight: bold;
+  width: 100px;
+  margin: 5px 0px 5px 20px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  background-color: #008080;
+  color: #FFFFFF;
+  transition: background 0.18s ease-in, color 0.18s ease-in;
+}
+
+#randomButton:hover, #searchButton:hover, #faq:hover, #clear:hover {
   background:#07AA9E;
   color: #FFFFFF;
 }
