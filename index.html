@@ -9,17 +9,22 @@
 
     <!-- Development Files -->
     <script src="script.js"></script>
-    <link src="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
     <header>
       <h1>Prime Giphy Generator</h1>
+      <h2>Search for a random giph, a random giph with a specific tag, or just a regular search!</h2>
       <section class="userSearch">
-        <input id="tagInput" type="search" placeholder="Random/Tag Search"/>
-        <button id="randomButton">Random Giph</button>
+        <div class="search">
+          <input id="tagInput" type="search" placeholder="Random/Tag Search"/>
+          <button id="randomButton">Random Giph</button>
+        </div>
 
-        <input id="regInput" type="search" placeholder="Regular Search" />
-        <button id="searchButton">Get Giphs</button>
+        <div class="search">
+          <input id="regInput" type="search" placeholder="Regular Search" />
+          <button id="searchButton">Get Giphs</button>
+        </div>
       </section>
     </header>
     <div id="display"></div>
