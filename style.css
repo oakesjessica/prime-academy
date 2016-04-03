@@ -1,0 +1,80 @@
+html, body, p {
+  padding: 0px;
+  margin: 0px;
+  font-family: arial, sans-serif;
+}
+
+header {
+  border: 1px solid black;
+}
+
+header {
+  width: 100%;
+  background: teal;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  padding: 0px 0px 10px 0px;
+}
+
+.movies {
+  border: 1px solid red;
+  padding: 10px;
+  position: relative;
+  margin-top: 200px;  /*after fix 159*/
+}
+
+#display {
+  border: 1px solid green;
+  padding: 20px;
+}
+
+#myMovies {
+  border: 1px solid purple;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#myMovies p {
+  padding: 10px 0px 0px;
+  font-size: 12px;
+}
+
+.movies img {
+  height: 200px;
+  /*height: auto;*/
+}
+#myMovies div {
+  width: 300px;
+}
+
+
+
+
+/*#myMovies {
+  padding: 20px;
+}
+
+#display {
+  border: 1px solid green;
+  padding: 20px;
+}
+
+img {
+  max-width: 20%;
+  height: auto;
+}
+
+#myMovies, #display {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#myMovies p, #display p {
+  padding: 3px;
+  margin: 0px;
+  font-size: 12px;
+}*/

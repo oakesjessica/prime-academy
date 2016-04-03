@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OMDB Movie Search</title>
+
+    <!-- Libraries/Framework -->
+    <script src="jquery-2.2.2.min.js"></script>
+    <!-- <script src="http://viralpatel.net/blogs/demo/jquery/jquery.shorten.1.0.js"></script> -->
+    <!-- Development Files -->
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <header>
+      <h1>OMDB Movie Search</h1>
+      <h2>Three movies that have had an impact on my life and a regular movie search</h2>
+      <button id="showMyMovies">Hide My Movies</button>
+      <button id="showAllMovies">Hide All Movies</button>
+      <input type="search" id="movieInput" placeholder="Title (required)" />
+      <input type="search" id="yearRel" placeholder="Year (opt)" />
+      <select name="omdb-type" id="movieType">
+        <option selected></option>
+        <option>Movie</option>
+        <option>Series</option>
+        <option>Episode</option>
+      </select>
+      <button id="search">Search</button>
+      <button id="faq">FAQ</button>
+      <button id="clear">Clear Movies Search</button>
+    </header>
+    <section class="movies">
+      <section id="myMovies"></section>
+      <section id="display"></section>
+    </section>
+  </body>
+</html>
