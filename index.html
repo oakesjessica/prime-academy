@@ -8,27 +8,20 @@
     <script src="jquery-2.2.2.min.js"></script>
 
     <!-- Development Files -->
-    <link rel="stylesheet" href="style.css"/>
     <script src="script.js"></script>
+    <link src="stylesheet" href="style.css"/>
   </head>
   <body>
-    <h1>Prime: Random GIF Generator</h1>
+    <header>
+      <h1>Prime Giphy Generator</h1>
+      <section class="userSearch">
+        <input id="tagInput" type="search" placeholder="Random/Tag Search"/>
+        <button id="randomButton">Random Giph</button>
 
-    <section class="selections">
-      <div id="randomSearch" class="buttons">
-        <button id="random" class="generator">Generate Random GIF!</button>
-      </div>
-      <div id="tagSearch" class="buttons">
-        <label for="giphyTag">Input a tag!!</label>
-        <input type="text" name="giphyTag" id="giphyTag" />
-        <button id="random" class="generator">Generate Giphy by Tag</button>
-      </div>
-      <div id="regSearch" class="buttons">
-        <label for="search">Regular Search</label>
-        <input type="text" name="search" id="search" />
-        <button id="searchGen" class="generate">Search</button>
-      </div>
-    </section>
+        <input id="regInput" type="search" placeholder="Regular Search" />
+        <button id="searchButton">Get Giphs</button>
+      </section>
+    </header>
     <div id="display"></div>
   </body>
 </html>
