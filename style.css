@@ -72,3 +72,7 @@ button:hover {
   margin: 10px 20px;
   padding: 20px;
 }
+
+#display img {
+  margin: 0px 3px;
+}
