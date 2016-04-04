@@ -8,25 +8,28 @@ $(function() {
     displayMyMovies(movie1);
   }); //  Atlantis: The Lost Empire
 
-  $.get("http://www.omdbapi.com/?t=coraline&y=&plot=full&r=json").done(function(response) {
+  $.get("http://www.omdbapi.com/?t=brotherhood+of+war&y=&plot=short&r=json").done(function(response) {
     var movie2 = response;
     displayMyMovies(movie2);
-  }); //  Coraline
+  }); //  Brotherhood of War
 
-  $.get("http://www.omdbapi.com/?t=lion+king&y=&plot=full&r=json").done(function(response) {
+  $.get("http://www.omdbapi.com/?t=fiddler+on+the+roof&y=&plot=short&r=json").done(function(response) {
     var movie3 = response;
     displayMyMovies(movie3);
-  }); //  Lion King
+  }); //  Fiddler on the Roof
 
   //  Search Button
   $("#search").on("click", function() {
+    //  Initialize empty variables
     var movieTag = "";
     var movieYear = "";
     var movieType = "";
 
+    //  Assign title, year, and type to variables
     movieTag = $("#title").val().replace(/ /g, "+");
     movieYear = $("#year").val();
     movieType = $("#type").val().toLowerCase();
+
     if (movieTag === "") {
       alert("Please enter a title!");
     }
@@ -35,16 +38,21 @@ $(function() {
     }
   });
 
-  //  Search Enter Button for title/year inputs
+  //  Enter Button Search for title/year search fields
   $("#title, #year").keypress(function(event) {
     var movieTag = "";
     var movieYear = "";
     var movieType = "";
     var code = event.which;
+
+    //  If enter key was pressed
     if (code === 13) {
+      //  Assign title, year, and type to variables
       movieTag = $("#title").val().replace(/ /g, "+");
       movieYear = $("#year").val();
       movieType = $("#type").val().toLowerCase();
+
+      //  Alert if title value is empty, otherwise get info from API
       if (movieTag === "") {
         alert("Please enter a title!");
       }
@@ -52,9 +60,10 @@ $(function() {
         getMovieInfo(movieTag, movieType, movieYear);
       }
     }
-  }); //  Movie Search Enter Key event
+  }); //  Enter keypress event for title/year
 
   $("#hideMovies").on("click", function() {
+    //  Toggle movies display and change button text
     if ($(this).text() === "Hide Movies") {
       $(this).text("Show Movies");
       $(".movies").slideToggle("show");
@@ -63,14 +72,16 @@ $(function() {
       $(this).text("Hide Movies");
       $(".movies").slideToggle("show");
     }
-  }); //  showMyMovies button
+  }); //  hideMovies button
 
   $("#clear").on("click", function() {
+    //  Alert if movies have already been cleared, otherwise empty display and reset num back to zero
     if (($("#searchDisplay").children().length === 0)) {
       alert("Movies have been cleared");
     }
     else {
       $("#searchDisplay").empty();
+      searchMovieNum = 0;
     }
   }); //  Clear Button
 
@@ -79,17 +90,20 @@ $(function() {
   }); //  FAQ Button
 
   //  Clear field when clicked again, only works if input field is not selected
-  $("#title").focus(
-    function(){
-      $(this).val("");
-  }); //  clear #tagInput
+  //  For now, only year field as user may want to edit title
+  //  In case it's long, user does not have to re-type over again
+
+  // $("#title").focus(
+  //   function(){
+  //     $(this).val("");
+  // }); //  clear #title input
 
   $("#year").focus(
     function(){
       $(this).val("");
-  }); //  clear #tagInput
+  }); //  clear #year input
 
-  /*Function to get movie information by search*/
+  /*API search function*/
   function getMovieInfo(title, type, year) {
     $.get("http://www.omdbapi.com/", {
       t: title,
@@ -97,13 +111,14 @@ $(function() {
       y: year,
       plot: "full",
       r: "json"}).done(function(response) {
-        // console.log(response);
         displaySearchMovies(response);
     }).fail(function(response) {
-      console.log("Failed to get movie");
+      console.log("Failed");
     }); //  AJAX finished
-  }
+  } //  getMovieInfo
 
+  //  Listener event for slide button
+  //  Toggle that button's content class sibling and change text
   $(document).on("click", ".slideButton", function() {
     if ($(this).text() === "Slide Down") {
       $(this).text("Slide Up");
@@ -113,10 +128,9 @@ $(function() {
       $(this).text("Slide Down");
       $(this).siblings(".content").slideToggle("show");
     }
-  });  // Slide button listener event
+  }); //  Slide button for content
 
   function displayMyMovies(movieObj) {
-    // console.log(myMovieNum, searchMovieNum);
     //  Section for movie info, add image and title at top
     $("#myDisplay").append("<section id=\"myMovie-" + (myMovieNum) + "\" class=\"displayMovies\"></section>");
     $("#myMovie-" + (myMovieNum)).append("<img src=\"" + movieObj.Poster + "\">",
@@ -134,17 +148,16 @@ $(function() {
       "<p><b> Language(s):</b> " + movieObj.Language + "</p>",
       "<p><b> Plot:</b> " + movieObj.Plot + "</p>");
 
-    //  Hide content initially
+    //  Hide content
     $(".content").hide();
 
     //  Append slide down button
     $("#myMovie-" + (myMovieNum)).append("<button class=\"slideButton\">" + "Slide Down" + "</button>");
-    myMovieNum += 1;
-    // console.log(myMovieNum, searchMovieNum);
+
+    myMovieNum += 1;  //  Increment myMovieNum
   } //  displayMyMovies
 
   function displaySearchMovies(movieObj) {
-    console.log(myMovieNum, searchMovieNum);
     //  Section for movie info, add image and title at top
     $("#searchDisplay").append("<section id=\"Movie-" + (searchMovieNum) + "\" class=\"displayMovies\"></section>");
     $("#Movie-" + (searchMovieNum)).append("<img src=\"" + movieObj.Poster + "\">" + "<h3>" + movieObj.Title + "</h3>");
@@ -161,12 +174,12 @@ $(function() {
       "<p><b> Language(s):</b> " + movieObj.Language + "</p>",
       "<p><b> Plot:</b> " + movieObj.Plot + "</p>");
 
-    //  Hide content initially
+    //  Hide content
     $(".content").hide();
 
     //  Append slide down button
     $("#Movie-" + (searchMovieNum)).append("<button class=\"slideButton\">" + "Slide Down" + "</button>");
-    searchMovieNum += 1;
-    console.log(myMovieNum, searchMovieNum);
+
+    searchMovieNum += 1;  //  Increment searchMovieNum
   } //  displaySearchMovies
 }); //  Doc-ready function

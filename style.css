@@ -86,7 +86,6 @@ header {
   margin: 10px;
   padding: 5px;
   background: #FFFFFF;
-  /*border-radius: 6px;*/
   box-shadow: 0px 0px 5px #888888;
 }
 
@@ -110,13 +109,6 @@ button {  /*buttons*/
   outline: none;
 }
 
-.slideButton {  /*Dynamically created slide button*/
-  display: block;
-  margin: 0 auto;
-  height: auto;
-  background: #989898;
-}
-
 #title {  /*Movie title search input*/
   width: 250px;
 }
@@ -125,12 +117,12 @@ button {  /*buttons*/
   width: 75px;
 }
 
-#search {
+#search { /*Search button*/
   width: 70px;
   margin-right: 200px;
 }
 
-#hideMovies, #clear, #faqButton { /*Show/Hide Movies button*/
+#hideMovies, #clear, #faqButton { /*Show/Hide Movies, Clear, and FAQ button*/
   width: 50px;
 }
 
@@ -138,4 +130,27 @@ input[type="search"] {
   font-size: 11px;
   border-radius: 4px;
   padding: 3px;
+}
+
+.slideButton {  /*Dynamically created slide button*/
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  height: 20px;
+  width: 90px;
+  background: #989898;
+}
+
+button, .slideButton {
+  transition: background 0.15s ease-in, color 0.15s ease-in;
+}
+
+button:hover {  /*Header button hovers*/
+  background: #4DA6A6;
+  color: 	#F5F5F5;
+}
+
+.slideButton:hover {
+  background: #008080;
+  color: #FFFFFF;
 }
