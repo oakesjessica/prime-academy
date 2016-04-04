@@ -4,7 +4,11 @@
 html, body, p, h1, h2, h3 {
   padding: 0px;
   margin: 0px;
+}
+
+body {
   font-family: arial, sans-serif;
+  background: #EEEEEE;
 }
 
 h1, h2 {
@@ -22,7 +26,7 @@ h2 {
 
 header {
   width: 100%;
-  background: gray;
+  background: #808080;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -45,21 +49,12 @@ header {
   padding: 0px 20px 0px 0px;
 }
 
-#faqs {
-  margin-top: 55px;
-  position: relative;
-  padding: 20px;
-  border: 1px solid blue;
-}
-
 .movies {
-  background: #EEEEEE;
-  border: 1px solid red;
+  margin-top: 55px;
   position: relative;
 }
 
 #myDisplay, #searchDisplay {
-  border: 1px solid purple;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -71,6 +66,7 @@ header {
   font-size: 19px;
   font-weight: bold;
   text-align: center;
+  padding-bottom: 5px;
 }
 
 .movies p {
@@ -83,12 +79,15 @@ header {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /*height: auto;*/
 }
 
-#myDisplay div, #searchDisplay div {
+#myDisplay section, #searchDisplay section {
   width: 350px;
+  margin: 10px;
+  padding: 5px;
   background: #FFFFFF;
+  /*border-radius: 6px;*/
+  box-shadow: 0px 0px 5px #888888;
 }
 
 input[type="search"], select, button {  /*All search fields*/
@@ -109,6 +108,13 @@ button {  /*buttons*/
   background: #FFFFFF;
   border: none;
   outline: none;
+}
+
+.slideButton {  /*Dynamically created slide button*/
+  display: block;
+  margin: 0 auto;
+  height: auto;
+  background: #989898;
 }
 
 #title {  /*Movie title search input*/
