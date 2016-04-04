@@ -86,7 +86,7 @@ header {
   margin: 10px;
   padding: 5px;
   background: #FFFFFF;
-  box-shadow: 0px 0px 5px #888888;
+  box-shadow: 0px 0px 5px #008080;
 }
 
 input[type="search"], select, button {  /*All search fields*/
