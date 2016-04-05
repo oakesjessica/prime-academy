@@ -158,28 +158,35 @@ $(function() {
   } //  displayMyMovies
 
   function displaySearchMovies(movieObj) {
-    //  Section for movie info, add image and title at top
-    $("#searchDisplay").append("<section id=\"Movie-" + (searchMovieNum) + "\" class=\"displayMovies\"></section>");
-    $("#Movie-" + (searchMovieNum)).append("<img src=\"" + movieObj.Poster + "\">" + "<h3>" + movieObj.Title + "</h3>");
+    //  Alert user if movie was not retrieved successfully from API Database
+    if (movieObj.Response === "False") {
+      alert("Movie not found. Please try again!");
+    }
+    else {
+      // console.log(movieObj.Response);
+      //  Section for movie info, add image and title at top
+      $("#searchDisplay").append("<section id=\"Movie-" + (searchMovieNum) + "\" class=\"displayMovies\"></section>");
+      $("#Movie-" + (searchMovieNum)).append("<img src=\"" + movieObj.Poster + "\">" + "<h3>" + movieObj.Title + "</h3>");
 
-    //  Add div and append rest of info
-    $("#Movie-" + (searchMovieNum)).append("<div id=\"searchContent-" + (searchMovieNum) + "\" class=\"content\"></div>");
-    $("#searchContent-" + (searchMovieNum)).append("<p><b> Directed by:</b> " + movieObj.Director + "</p>",
-      "<p><b> Date Released:</b> " + movieObj.Released + "</p>",
-      "<p><b> Run-Time:</b> " + movieObj.Runtime + "</p>",
-      "<p><b> Genre:</b> " + movieObj.Genre + "</p>",
-      "<p><b> IMDB Rating:</b> " + movieObj.Rated + "</p>",
-      "<p><b> Story By:</b> " + movieObj.Writer + "</p>",
-      "<p><b> Actors:</b> " + movieObj.Actors + "</p>",
-      "<p><b> Language(s):</b> " + movieObj.Language + "</p>",
-      "<p><b> Plot:</b> " + movieObj.Plot + "</p>");
+      //  Add div and append rest of info
+      $("#Movie-" + (searchMovieNum)).append("<div id=\"searchContent-" + (searchMovieNum) + "\" class=\"content\"></div>");
+      $("#searchContent-" + (searchMovieNum)).append("<p><b> Directed by:</b> " + movieObj.Director + "</p>",
+        "<p><b> Date Released:</b> " + movieObj.Released + "</p>",
+        "<p><b> Run-Time:</b> " + movieObj.Runtime + "</p>",
+        "<p><b> Genre:</b> " + movieObj.Genre + "</p>",
+        "<p><b> IMDB Rating:</b> " + movieObj.Rated + "</p>",
+        "<p><b> Story By:</b> " + movieObj.Writer + "</p>",
+        "<p><b> Actors:</b> " + movieObj.Actors + "</p>",
+        "<p><b> Language(s):</b> " + movieObj.Language + "</p>",
+        "<p><b> Plot:</b> " + movieObj.Plot + "</p>");
 
-    //  Hide content
-    $(".content").hide();
+      //  Hide content
+      $(".content").hide();
 
-    //  Append slide down button
-    $("#Movie-" + (searchMovieNum)).append("<button class=\"slideButton\">" + "Slide Down" + "</button>");
+      //  Append slide down button
+      $("#Movie-" + (searchMovieNum)).append("<button class=\"slideButton\">" + "Slide Down" + "</button>");
 
-    searchMovieNum += 1;  //  Increment searchMovieNum
+      searchMovieNum += 1;  //  Increment searchMovieNum
+    } //  if-else statement
   } //  displaySearchMovies
 }); //  Doc-ready function
