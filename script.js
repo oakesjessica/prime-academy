@@ -36,7 +36,7 @@ $(function() {
     else {
       getMovieInfo(movieTag, movieType, movieYear);
     }
-  });
+  }); //  #search button
 
   //  Enter Button Search for title/year search fields
   $("#title, #year").keypress(function(event) {
