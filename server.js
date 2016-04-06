@@ -1,9 +1,11 @@
 var express = require("express");
+var moment = require("moment");
 var app = express();
 
+var date = moment().format("Do MMMM YYYY");
 
 app.get("/", function(req, res) {
-  res.send("Hello World!");
+  res.send("Hello World!\n" + "Today's date is " + date);
 });
 
 //  Listener
