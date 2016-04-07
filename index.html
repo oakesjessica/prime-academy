@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular To Do</title>
+
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <h1>To Do</h1>
+    <h2>with Angular</h2>
+    <div ng-controller="MainController">
+      Enter Task <input type="text" ng-keypress="enter($event)"
+      ng-model="task" placeholder="Enter task"/>
+      <button ng-click="addTask()">Add to List</button>
+
+
+      <div ng-repeat="task in taskList track by $index">
+        <input type="checkbox" ng-model="check"/> {{task}} <button ng-click="removeTask($index)">Remove</button>
+      </div>
+    </div>  <!--MainController-->
+
+
+  </body>
+</html>
