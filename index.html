@@ -34,13 +34,13 @@
       <button id="faq" ng-click="faq">FAQ</button>
       <button id="clear" ng-click="clear">Clear Giph's</button>
     </section>
-    <div class="display" ng-model="displayGiphs">
-      <img ng-src="{{giphy.image_original_url}}" />
+    <div class="display" ng-model="displayGiphs" ngShow="random" ng-repeat="giphy in giphyPics track by $index">
+      <img ng-src="{{giphy}}" />
     </div>
-    <div class="display" ng-model="displaySearch">
-      <div ng-repeat="pics in giphys track by $index">
-        <img ng-src="{{pics.images.original.url}}"
-      </div>
-    </div>
+    <!-- <div class="display" ng-model="displaySearch" ng-show="search">
+      <div ng-repeat="giphy in giphys track by $index">
+        <img ng-src="{{giphy.images.original.url}}"
+      </div> -->
+    <!-- </div> -->
   </body>
 </html>

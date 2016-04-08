@@ -97,4 +97,5 @@ input[type="search"] {
 
 .display img {
   margin: 0px 3px;
+  display: inline;
 }
