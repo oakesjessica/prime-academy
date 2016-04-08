@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="candidateApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Challenge</title>
+
+    <!-- Libraries/Framework -->
+    <script src="angular.min.js"></script>
+
+    <!-- Development Files -->
+    <script src="client.js"></script>
+  </head>
+  <body ng-controller="PoliticsController">
+    <h1>Angular Challenge</h1>
+    <h2>Elect a President!</h2>
+
+    <button ng-click="showCandidates()">Show Candidates</button>
+    <button ng-click="chooseCandidate()">Choose the Winner</button>
+    <div ng-show="listCandidates">
+      <div id="dem">
+        Democrats
+        <ul>
+          <li ng-repeat="democrat in democrats">
+            {{democrat.name}}
+          </li>
+        </ul>
+      </div>
+
+      <div id="rep">
+        Republicans
+        <ul>
+          <li ng-repeat="republican in republicans">
+            {{republican.name}}
+          </li>
+        </ul>
+      </div>
+    </div>  <!--ng-show="listCandidates"-->
+
+    <div ng-model="winner" ng-show="showWinner">
+      Our president is... {{winner}}!!!
+    </div> <!--ng-model="winner" ng-show-"showWinner"-->
+  </body> <!--ng-controller="PoliticsController"-->
+</html>
