@@ -11,20 +11,24 @@ function Profile(name, party) {
   this.party = party;
 }
 
+//  Add Democrat objects
 var korra = new Profile("Korra", "Democrat");
-var pli = new Profile("Pli", "Republican");
 var asami = new Profile("Asami", "Democrat");
-var zaheer = new Profile("Zaheer", "Republican");
-var unalaq = new Profile("Unalaq", "Republican");
-var bolin = new Profile("Mako", "Democrat");
-var vaatu = new Profile("Vaatu", "Republican");
-var ozai = new Profile("Ozai", "Republican");
-var lin = new Profile("Lin", "Democrat");
-var kuvira = new Profile("Kuvira", "Republican");
+var bolin = new Profile("Bolin", "Democrat");
+var albus = new Profile("Albus", "Democrat");
 var su = new Profile("Su", "Democrat");
+var celaena = new Profile("Celaena", "Democrat");
 
-democrats.push(korra, asami, bolin, mako, lin, su);
-republicans.push(pli, zaheer, unalaq, vaatu, ozai, kuvira);
+//  Add Republican objects
+var kuvira = new Profile("Kuvira", "Republican");
+var leia = new Profile("Leia", "Republican");
+var anakin = new Profile("Anakin", "Republican");
+var legolas = new Profile("Legolas", "Republican");
+var teia = new Profile("Teia", "Republican");
+var lin = new Profile("Lin", "Republican");
+
+democrats.push(korra, asami, bolin, albus, su, celaena);
+republicans.push(kuvira, leia, anakin, legolas, teia, lin);
 
 app.get("/", function(request, response) {
   response.sendFile(__dirname + "/public/index.html");
