@@ -19,28 +19,19 @@
         <div class="search">
           <input id="tagInput" type="search" placeholder="Random/Tag Search" ng-model="tagGiph"/>
           <button id="randomButton" ng-click="randomGiph()">Random Giph</button>
-        </div>
-
-        <!-- <div class="alert" ng-show="showAlert">
-          alert("Please enter a search");
-        </div> -->
+        </div>  <!--div random/tag search-->
         <div class="search">
           <input id="regInput" type="search" placeholder="Regular Search" ng-model="regGiph"/>
           <button id="searchButton" ng-click="searchGiph()">Get Giphs</button>
-        </div>
-      </section>
+        </div>  <!--div regular search-->
+      </section>  <!--section userSearch-->
     </header>
     <section class="otherButtons">
       <button id="faq" ng-click="faq">FAQ</button>
       <button id="clear" ng-click="clear">Clear Giph's</button>
-    </section>
+    </section>  <!--section otherButtons-->
     <div class="display" ng-model="displayGiphs" ngShow="random" ng-repeat="giphy in giphyPics track by $index">
       <img ng-src="{{giphy}}" />
-    </div>
-    <!-- <div class="display" ng-model="displaySearch" ng-show="search">
-      <div ng-repeat="giphy in giphys track by $index">
-        <img ng-src="{{giphy.images.original.url}}"
-      </div> -->
-    <!-- </div> -->
+    </div>  <!--div class="display"-->
   </body>
 </html>

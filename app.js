@@ -18,26 +18,28 @@ app.controller("GiphyController", function($scope, $http) {
       }
     };  //  config
 
+    //  GET request to random API
     $http.get("http://api.giphy.com/v1/gifs/random", config).then(function(response) {
       console.log(response);
       //  Clear array so display will clear
       $scope.giphyPics = [];
+
       //  Assign response to giph object and push to array
       $scope.giphy = response.data.data;
       $scope.giphyPics.push($scope.giphy.image_original_url);
-
-      console.log($scope.giphys);
     }); //  $http.get
   };  //  $scope.randomGiph button
 
   $scope.searchGiph = function() {
     if ($scope.regGiph === "") {
       alert("Add a search!");
+
+      //  Clear array so display will clear
       $scope.giphyPics = [];
     }
     else {
 
-      //  Clear array display
+      //  Clear array display so display will clear
       $scope.giphyPics = [];
 
       //  search parameters
@@ -48,6 +50,7 @@ app.controller("GiphyController", function($scope, $http) {
         }
       };  //  config
 
+      //  GET request to search API
       $http.get("http://api.giphy.com/v1/gifs/search", config).then(function(response) {
         console.log("response", response.data.data);
 
