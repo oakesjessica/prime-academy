@@ -6,19 +6,23 @@
 
     <!-- Libraries/Framework -->
     <script src="angular.min.js"></script>
+    <link href="style.css" rel="stylesheet" />
 
     <!-- Development Files -->
     <script src="client.js"></script>
   </head>
   <body ng-controller="PoliticsController">
-    <h1>Angular Challenge</h1>
-    <h2>Elect a President!</h2>
-
-    <button ng-click="showCandidates()">Show Candidates</button>
-    <button ng-click="chooseCandidate()">Choose the Winner</button>
-    <div ng-show="listCandidates">
+    <header>
+      <h1>Angular Challenge</h1>
+      <h2>Elect a President!</h2>
+      <div id="buttons">
+        <button id="show" ng-click="showCandidates()">Show Candidates</button>
+        <button id="winner" ng-click="chooseCandidate()">Choose the Winner</button>
+      </div>
+    </header>
+    <div id="displayCandidates" ng-show="listCandidates">
       <div id="dem">
-        Democrats
+        <h3>Democrats</h3>
         <ul>
           <li ng-repeat="democrat in democrats">
             {{democrat.name}}
@@ -27,7 +31,7 @@
       </div>
 
       <div id="rep">
-        Republicans
+        <h3>Republicans</h3>
         <ul>
           <li ng-repeat="republican in republicans">
             {{republican.name}}
@@ -36,7 +40,7 @@
       </div>
     </div>  <!--ng-show="listCandidates"-->
 
-    <div ng-model="winner" ng-show="showWinner">
+    <div id="displayWinner" ng-model="winner" ng-show="showWinner">
       Our president is... {{winner}}!!!
     </div> <!--ng-model="winner" ng-show-"showWinner"-->
   </body> <!--ng-controller="PoliticsController"-->

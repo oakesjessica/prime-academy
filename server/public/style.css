@@ -1,0 +1,50 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  font: inherit;
+}
+
+body {
+  font-family: arial, sans-serif;
+  background-image: url(http://www.hd-freewallpapers.com/upload/eagle-image/bald-eagle-flag-images-wallpaper.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+h1, h2 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#show, #winner {
+  margin: 0px 0px 0px 30px;
+}
+
+#displayCandidates, #displayWinner {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+#dem, #rep {
+  background: #FDFDF0;
+  display: inline-block;
+  min-width: 200px;
+  margin: 0 auto;
+  margin: 0px 0px 0px 40px;
+}
+
+#displayWinner {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 300px 0px 0px 0px;
+  min-width: 400px;
+}

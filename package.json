@@ -1,5 +1,5 @@
 {
-  "name": "candidate-winner",
+  "name": "candidate-generator",
   "version": "1.0.0",
   "description": "Angular Challenge ALL RIGHT! Set up a NEW project! From the ground up. Bring in Angular, that's all we will need for our project today.",
   "main": "server.js",
