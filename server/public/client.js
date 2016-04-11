@@ -12,8 +12,10 @@ app.controller("PoliticsController", function($scope, $http) {
 
   //  Button to show candidates
   $scope.showCandidates = function() {
+		//	Show listCandidates div
+		$scope.listCandidates = true;
+
     $http.get("/democrats").then(function(response) {
-      $scope.listCandidates = true;
       $scope.democrats = response.data;
 
 			//	Merge data to allCandidates arrays
