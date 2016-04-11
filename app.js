@@ -84,14 +84,14 @@ function calcPercentage(indivClaim) {
 ** Costs should be rounded to the nearest whole number
 ** Console out message "Paid out $___ for [patientName]"
 */
+var indivMessage = "";
 function amountCovered(indivClaim) {
 	var indivName = indivClaim.patientName;
 	var claimAmount = Math.round(indivClaim.visitCost * calcPercentage(indivClaim));
-	var indivMessage = "";
 
 	totalPayedOut += claimAmount;	//	Calculate total amount paid out
-
-	$("#claimsList").append("<li>" + "Paid out " + addMoneyComma(claimAmount) + " for " + indivName + "</li>");
+	indivMessage = "Paid out " + addMoneyComma(claimAmount) + " for " + indivName;
+	$("#claimsList").append("<li>" + indivMessage + "</li>");
 	console.log(indivMessage);
 }
 
@@ -104,7 +104,8 @@ $(function(){
 	for (var it = 0; it < initialList.length; it++) {
 		amountCovered(initialList[it]);
 	}
-	
-	$("#claimsList").append("<p>" + "Total amount of claims covered: " + addMoneyComma(totalPayedOut) + "<p>");
+
+	var totalMessage = "Total amount of claims covered: " + addMoneyComma(totalPayedOut);
+	$("#claimsList").append("<p>" + totalMessage +"</p>");
 	console.log(totalMessage);
 });
