@@ -1,0 +1,56 @@
+/*font-family: 'Orbitron', sans-serif;
+font-family: 'Bangers', cursive;
+font-family: 'Architects Daughter', cursive;
+font-family: 'Kaushan Script', cursive;
+font-family: 'Satisfy', cursive;
+font-family: 'Economica', sans-serif;
+font-family: 'Montez', cursive;*/
+
+body {
+  background-color: slategray;
+  font-family: "futura", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Orbitron' sans-serif;
+  color: white;
+  line-height: px;
+
+}
+
+p{
+  font-family: "futura", sans-serif;
+}
+
+h1{
+
+}
+
+button {
+  font-family: 'Bangers', 'futura', sans-serif;
+  font-size: 20px;
+  padding: 5px;
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+
+}
+
+.generator{
+
+}
+
+.twitterName {
+  font-family: 'Orbitron', sans-serif;
+  line-height: 5px;
+  margin: 10px auto;
+  letter-spacing: 3px;
+
+
+}
+
+.allTheThings {
+
+}
