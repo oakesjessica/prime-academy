@@ -10,15 +10,13 @@
 
 <body ng-controller="MainController">
   <div class="generator">
-    <button ng-click="generate()">Generate</button>
-  </div>
-
-  <div ng-repeat="name in randomNames" class="results">
-    {{name}}
+    <button ng-click="randomize()">Generate</button>
 
   </div>
-
+  <div class="allTheThings" ng-repeat="name in randomNames">
+    <a ng href="http://www.twitter.com/{{name}}">@{{name}}</a>
+    <input type = "checkbox">
+  </div>
 </body>
-
 
 </html>

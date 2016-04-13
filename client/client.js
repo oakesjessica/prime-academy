@@ -19,7 +19,7 @@ app.controller("MainController", ['$scope', '$http', function($scope, $http){
     });
   };  // $scope.getAdj
 
-  $scope.shuffle = function(array) {
+  var shuffle = function(array) {
 
     var currentIndex = array.length;
     var tempValue, randomIndex;
@@ -39,18 +39,20 @@ app.controller("MainController", ['$scope', '$http', function($scope, $http){
     return array;
   };  //  $scope.shuffle
 
-  $scope.generate = function() {
-    $scope.randNouns = $scope.shuffle($scope.nouns);
-    $scope.randAdjs = $scope.shuffle($scope.adj);
-    for (var it = 0; it < $scope.randAdjs.length; it++) {
-      $scope.randomNames.unshift($scope.randNouns[it] + $scope.randAdjs[it]);
-    }
+  $scope.randomize = function() {
+    $scope.randNouns = shuffle($scope.nouns);
+    $scope.randAdjs = shuffle($scope.adj);
+
+    $scope.randomNames.push($scope.randAdjs[0] + $scope.randNouns[0]);
+
+
   };
 
   // Get nouns/adjectives, generate shuffled result
   $scope.getNouns();
   $scope.getAdj();
-  $scope.generate();
+  //$scope.randomize();
+
 
 
 }]);
