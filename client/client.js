@@ -42,7 +42,6 @@ app.controller("MainController", ['$scope', '$http', function($scope, $http){
   $scope.generate = function() {
     $scope.randNouns = $scope.shuffle($scope.nouns);
     $scope.randAdjs = $scope.shuffle($scope.adj);
-
     for (var it = 0; it < $scope.randAdjs.length; it++) {
       $scope.randomNames.unshift($scope.randNouns[it] + $scope.randAdjs[it]);
     }

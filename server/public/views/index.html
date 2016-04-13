@@ -13,7 +13,8 @@
     <button ng-click="generate()">Generate</button>
   </div>
 
-  <div ng-show = "class="results">
+  <div ng-repeat="name in randomNames" class="results">
+    {{name}}
 
   </div>
 
