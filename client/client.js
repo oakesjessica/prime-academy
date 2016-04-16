@@ -30,6 +30,29 @@ app.controller("TicketController", ["$http", function($http) {
     $http.delete("/tickets/complete/" + id).then(getTickets());
   };  //  vm.completeTicket
 
+  //  Click Edit Button
+  vm.makeEdits = function(editedTicket) {
+    // console.log("edit");
+    vm.editTicket = editedTicket;
+  };
+
+  //  Save Edits
+  vm.saveEdits = function() {
+    // console.log("saving edits", vm.editTicket);
+
+    $http.put("/tickets/update", vm.editTicket ).then(function(response) {
+      // console.log("Edits updated");
+      vm.editTicket = {};
+      getTickets();
+    }); //  $http.put
+  };  //  vm.saveEdits
+
+
+
+
+
+
+
 
 
 

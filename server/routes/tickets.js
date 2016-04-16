@@ -16,7 +16,7 @@ router.get("/", function(request, response) {
 
 //  Post new ticket to database
 router.post("/", function(request, response) {
-  console.log("receiving request of ", request.body);
+  console.log("receiving posting request of ", request.body);
 
   var info = request.body;
   var newTicket = new Ticket({
@@ -54,5 +54,34 @@ router.delete("/complete/:id", function(request, response) {
   }); //  Ticket.findOneAndRemove
 }); //  router.delete
 
+//  Update ticket in database
+router.put("/update", function(request, response) {
+  console.log("edit request received:");
+
+  //**Note: Manual way does not work
+  // var info = request.body;
+  // var updatedTicket = new Ticket({
+  //   name : info.name,
+  //   type : info.type,
+  //   priority : info.priority,
+  //   description : info.description,
+  //   assignee : info.assignee,
+  //   reporter : info.reporter,
+  //   updated : new Date()
+  // }); //  updatedTicket
+
+  var updatedTicket = new Ticket(request.body);
+  updatedTicket.updated = new Date();
+
+  Ticket.findOneAndUpdate({_id: request.body._id}, updatedTicket, function(err, ticket) {
+    if (err) {
+      console.log("edit not successfully");
+      response.sendStatus(500);
+    } else {
+      console.log("Updated ticket saved successfully with ticket:", ticket);
+      response.sendStatus(200);
+    }
+  }); //  Ticket.findOneAndUpdate
+}); //  router.put("/update/:id")
 
 module.exports = router;
