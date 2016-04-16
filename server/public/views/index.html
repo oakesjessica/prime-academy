@@ -32,48 +32,54 @@
       <div class="ticket row col-md-4" ng-repeat="ticket in avatar.tickets">
         <div class="well">
           <p>
+            Name:
             <span ng-hide="edit">
-              Name: {{ ticket.name }}
+              {{ ticket.name }}
             </span>
             <span ng-show="edit">
               <input type="text" ng-model="avatar.editTicket.name" />
             </span>
           </p>  <!--name-->
           <p>
+            Type:
             <span ng-hide="edit">
-              Type: {{ ticket.type }}
+              {{ ticket.type }}
             </span>
             <span ng-show="edit">
               <input type="text" ng-model="avatar.editTicket.type" />
             </span>
           </p>  <!--type-->
           <p>
+            Priority:
             <span ng-hide="edit">
-              Priority: {{ ticket.priority }}
+              {{ ticket.priority }}
             </span>
             <span ng-show="edit">
               <input type="text" ng-model="avatar.editTicket.priority" />
             </span>
           </p>  <!--priority-->
           <p>
+            Description:
             <span ng-hide="edit">
-              Description: {{ ticket.description }}
+              {{ ticket.description }}
             </span>
             <span ng-show="edit">
               <input type="text" ng-model="avatar.editTicket.description" />
             </span>
           </p>  <!--description-->
           <p>
+            Assignee:
             <span ng-hide="edit">
-              Assignee: {{ ticket.assignee }}
+              {{ ticket.assignee }}
             </span>
             <span ng-show="edit">
               <input type="text" ng-model="avatar.editTicket.assignee" />
             </span>
           </p>  <!--assignee-->
           <p>
+            Reporter:
             <span ng-hide="edit">
-              Reporter: {{ ticket.reporter }}
+              {{ ticket.reporter }}
             </span>
             <span ng-show="edit">
               <input type="text" ng-model="avatar.editTicket.reporter" />
