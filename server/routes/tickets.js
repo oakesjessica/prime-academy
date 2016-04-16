@@ -39,4 +39,20 @@ router.post("/", function(request, response) {
   }); //  newTicket.save
 }); //  router.post("/")
 
+
+//  Delete ticket from database when completed
+router.delete("/complete/:id", function(request, response) {
+  console.log("Delete request received");
+  Ticket.findOneAndRemove({_id: request.params.id}, function(err, ticket) {
+    if (err) {
+      console.log("error removing ticket with error", err);
+      response.sendStatus(500);
+    } else {
+      console.log("Ticket deleted", ticket);
+      response.sendStatus(200);
+    }
+  }); //  Ticket.findOneAndRemove
+}); //  router.delete
+
+
 module.exports = router;

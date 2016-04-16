@@ -5,6 +5,7 @@ app.controller("TicketController", ["$http", function($http) {
   vm.ticket = {};
   vm.tickets = [];
 
+  //  Call all database entries and append to DOM
   var getTickets = function() {
     return $http.get("/tickets").then(function(response) {
       if (response.status !== 200) {
@@ -17,12 +18,17 @@ app.controller("TicketController", ["$http", function($http) {
     }); //  return $http.get
   };  //  vm.getTickets
 
+  //  Submit ticket to database, then call to database again
   vm.submitTicket = function() {
     //  submit ticket to database and get all tickets from database to display
     return $http.post("/tickets", vm.ticket).then(getTickets());
   };  //  vm.submitTicket
 
-
+  //  Complete ticket, remove from database
+  vm.completeTicket = function(completedTicket) {
+    var id = completedTicket._id;
+    $http.delete("/tickets/complete/" + id).then(getTickets());
+  };  //  vm.completeTicket
 
 
 

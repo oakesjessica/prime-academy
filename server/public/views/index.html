@@ -41,6 +41,9 @@
             <p> Reporter: {{ ticket.reporter }} </p>
             <p> Date Created: {{ ticket.created }} </p>
             <p> Date Updated: {{ ticket.updated }} </p>
+
+            <!--buttons-->
+            <button class="btn btn-success" ng-click="avatar.completeTicket(ticket)">Complete </button>
           </div>  <!--well-->
         </div>  <!--row col-->
     </main> <!--main-->
