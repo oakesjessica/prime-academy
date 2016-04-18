@@ -1,6 +1,7 @@
 var express = require("express");
 var Ticket = require("../../models/ticket");
 var router = express.Router();
+var moment = require("moment");
 
 //  Call to database, find all tickets and send back
 router.get("/", function(request, response) {
@@ -30,11 +31,18 @@ router.post("/", function(request, response) {
     updated : new Date()
   }); //  newTicket
 
+  //  Use moment to save dates in locale supported form
+  newTicket.createdString = moment(newTicket.created).format('LLLL');
+  newTicket.updatedString = moment(newTicket.updated).format('LLLL');
+
+  console.log("newTicket", newTicket);
   newTicket.save(function(err) {
     if (err) {
       console.log("Issue saving to database with error", err);
+      response.sendStatus(500);
     } else {
       console.log("Ticket saved successfully");
+      response.sendStatus(200);
     }
   }); //  newTicket.save
 }); //  router.post("/")
@@ -58,20 +66,11 @@ router.delete("/complete/:id", function(request, response) {
 router.put("/update", function(request, response) {
   console.log("edit request received:");
 
-  //**Note: Manual way does not work
-  // var info = request.body;
-  // var updatedTicket = new Ticket({
-  //   name : info.name,
-  //   type : info.type,
-  //   priority : info.priority,
-  //   description : info.description,
-  //   assignee : info.assignee,
-  //   reporter : info.reporter,
-  //   updated : new Date()
-  // }); //  updatedTicket
-
   var updatedTicket = new Ticket(request.body);
   updatedTicket.updated = new Date();
+
+  //  Use moment to save updated date in locale supported form
+  updatedTicket.updatedString = moment(updatedTicket.updated).format('LLLL');
 
   Ticket.findOneAndUpdate({_id: request.body._id}, updatedTicket, function(err, ticket) {
     if (err) {

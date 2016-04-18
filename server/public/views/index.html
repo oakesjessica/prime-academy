@@ -18,19 +18,21 @@
   <body ng-controller="TicketController as avatar">
     <div class="page-header">
       <h1 class="text-center">Prime Ticket Management System</h1>
-      <div>
-        Name <input type="text" ng-model="avatar.ticket.name" />
-        Type <input type="text" ng-model="avatar.ticket.type" />
-        Priority <input type="text" ng-model="avatar.ticket.priority" />
-        Assignee <input type="text" ng-model="avatar.ticket.assignee" />
-        Reporter <input type="text" ng-model="avatar.ticket.reporter" />
-      </div>
-      <div class="description">
+      <div class="inputs text-center">
+          Name <input type="text" ng-model="avatar.ticket.name" />
+          Type <input type="text" ng-model="avatar.ticket.type" />
+          Priority <input type="text" ng-model="avatar.ticket.priority" />
+          Assignee <input type="text" ng-model="avatar.ticket.assignee" />
+          Reporter <input type="text" ng-model="avatar.ticket.reporter" />
+      </div>  <!--inputs-->
+      <div class="description text-center">
         Description <input class="descripInput form-control .input-lg" type="text" ng-model="avatar.ticket.description" />
       </div>
-      <button class="submit" ng-click="avatar.submitTicket()">Submit Ticket</button>
-    </div>
-    <h2 class="text-center">Tickets Open</h2>
+      <div class="submitButton text-center">
+        <button class="text-center submit" ng-click="avatar.submitTicket()">Submit Ticket</button>
+      </div>
+    </div>  <!--pageheader-->
+    <h2 class="text-center" style="color : red;">Tickets Open</h2>
     <div class="ticket row col-md-4" ng-repeat="ticket in avatar.tickets">
       <div class="well">
         <p>
@@ -78,8 +80,8 @@
             <input type="text" ng-model="avatar.editTicket.reporter" />
           </span>
         </p>  <!--reporter-->
-        <p> Date Created: {{ ticket.created }}</p>
-        <p> Date Updated: {{ ticket.updated }}</p>
+        <p> Date Created: {{ ticket.createdString }}</p>
+        <p> Date Updated: {{ ticket.updatedString }}</p>
         <p>
           Description:
           <span ng-hide="edit">
@@ -91,15 +93,17 @@
         </p>  <!--description-->
 
         <!--buttons-->
-        <button class="btn btn-danger text-center" ng-click="avatar.completeTicket(ticket)" ng-hide="edit">
-          Complete
-        </button>
-        <button class="btn btn-info text-center" ng-click="avatar.makeEdits(ticket); edit = true" ng-hide="edit">
-          Edit
-        </button>
-        <button class="btn btn-info text-center" ng-click="avatar.saveEdits(ticket); edit = false" ng-show="edit">
-          Save
-        </button>
+        <div class="ticketButtons text-center">
+          <button class="btn btn-danger text-center" ng-click="avatar.completeTicket(ticket)" ng-hide="edit">
+            Complete
+          </button>
+          <button class="btn btn-info text-center" ng-click="avatar.makeEdits(ticket); edit = true" ng-hide="edit">
+            Edit
+          </button>
+          <button class="btn btn-success text-center" ng-click="avatar.saveEdits(ticket); edit = false" ng-show="edit">
+            Save
+          </button>
+        </div>
       </div>  <!--well-->
     </div>  <!--row col-->
   </body> <!--body-->

@@ -4,18 +4,15 @@ html, body {
 }
 
 .well {
-  margin: 15px;
+  margin: 30px 15px;
 }
 
 .description {
   padding: 10px 0px;
 }
-.descripInput {
-  width: 60%;
-  min-height: 200px;
-  display: inline;
-}
 
-.submit {
-  text-align: center;
+.descripInput {
+  width: 40%;
+  min-height: 100px;
+  display: inline;
 }

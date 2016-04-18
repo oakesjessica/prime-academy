@@ -9,7 +9,9 @@ var ticketSchema = new Schema({
   assignee : { type : String, required : true },
   reporter : { type : String, required : true },
   created : { type : Date },
+  createdString : { type : String },
   updated : { type : Date },
+  updatedString : { type : String }
 });
 
 var Ticket = mongoose.model("Ticket", ticketSchema);
