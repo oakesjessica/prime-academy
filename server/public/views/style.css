@@ -1,4 +1,21 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
 .well {
-  display: inline-block;
-  margin: 20px;
+  margin: 15px;
+}
+
+.description {
+  padding: 10px 0px;
+}
+.descripInput {
+  width: 60%;
+  min-height: 200px;
+  display: inline;
+}
+
+.submit {
+  text-align: center;
 }
