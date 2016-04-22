@@ -10,37 +10,35 @@
 
     <!-- Development Files -->
     <script src="client.js"></script>
-    <link rel="stylesheet" href="style.css" />
 
   </head>
   <body ng-controller="AngularApp as note">
     <div class="container-fluid">
       <div class="jumbotron">
         <h1 class="text-center">Prime Angular Assessment</h1>
-
         <div class="text-center">
           <form ng-submit="note.submitMessage()">
             <input type="text" ng-model="note.message" placeholder="Message Goes Here"/>
             <input class="btn btn-info" type="submit" />
           </form>
-          <p ng-show="note.empty">Please enter a message!</p>
-        </div>
-      </div>
+          <p style="color:red" ng-show="note.empty">Please enter a message!</p>
+        </div>  <!--submit div-->
+      </div>  <!--jumbotron div-->
 
       <div class="col-md-6">
           <span ng-repeat="current in note.currentMessage track by $index">
-            <span class="title">Message is:</span> {{ current }}
+            <span class="title"><strong>Message is:</strong></span> {{ current }}
           </span>
-      </div>
+      </div>  <!--current message-->
 
       <div class="col-md-6" ng-show="note.previous">
-        <span class="title">Previous Messages are: </span>
+        <span class="title"><strong>Previous Messages are: </strong></span>
         <ol>
           <li ng-repeat="previous in note.previousMessages track by $index">
             {{ previous }}
           </li>
         </ol>
-      </div>
+      </div>  <!--previous messages-->
     </div>  <!--container-->
   </body>
 </html>
