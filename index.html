@@ -5,34 +5,42 @@
     <title>Angular Assessment App</title>
 
     <!-- Libraries/Framework -->
+    <link rel="stylesheet" href="bootstrap.min.css"/>
     <script src="angular.min.js"></script>
 
     <!-- Development Files -->
     <script src="client.js"></script>
+    <link rel="stylesheet" href="style.css" />
 
   </head>
   <body ng-controller="AngularApp as note">
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <h1 class="text-center">Prime Angular Assessment</h1>
 
-    <form ng-submit="note.submitMessage()">
-      <input type="text" ng-model="note.message" placeholder="Message Goes Here"/>
-      <input type="submit" />
-    </form>
+        <div class="text-center">
+          <form ng-submit="note.submitMessage()">
+            <input type="text" ng-model="note.message" placeholder="Message Goes Here"/>
+            <input class="btn btn-info" type="submit" />
+          </form>
+          <p ng-show="note.empty">Please enter a message!</p>
+        </div>
+      </div>
 
-    <div>
-      <ul>
-        <li ng-repeat="current in note.currentMessage track by $index">
-          Message is: {{ current }}
-        </li>
-      </ul>
-    </div>
+      <div class="col-md-6">
+          <span ng-repeat="current in note.currentMessage track by $index">
+            <span class="title">Message is:</span> {{ current }}
+          </span>
+      </div>
 
-    <div ng-show="note.previous">
-      <span>Previous Messages are: </span>
-      <ul>
-        <li ng-repeat="previous in note.previousMessages track by $index">
-          {{ previous }}
-        </li>
-      </ul>
-    </div>
+      <div class="col-md-6" ng-show="note.previous">
+        <span class="title">Previous Messages are: </span>
+        <ol>
+          <li ng-repeat="previous in note.previousMessages track by $index">
+            {{ previous }}
+          </li>
+        </ol>
+      </div>
+    </div>  <!--container-->
   </body>
 </html>
