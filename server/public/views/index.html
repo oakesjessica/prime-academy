@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+  <head>
+    <meta charset="utf-8">
+    <title>To-Do App</title>
+
+    <!-- Libraries/Framework -->
+    <script src="vendor/angular/angular.min.js"></script>
+    <!-- Development Files -->
+    <script src="assets/scripts/client.min.js"></script>
+
+  </head>
+  <body class="container-fluid" ng-controller="TaskController as tc">
+    <h1>Task Manager</h1>
+
+    <form ng-submit="tc.submitTask()">
+      <label>Enter task</label>
+      <input type="text" ng-model="tc.task.todo" />
+      <input type="submit" />
+    </form>
+
+    <div>
+      <ul>
+        <li ng-repeat="item in tc.tasksList">
+          {{item.task}}
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
