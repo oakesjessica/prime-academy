@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="angularApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Assessment App</title>
+
+    <!-- Libraries/Framework -->
+    <script src="angular.min.js"></script>
+
+    <!-- Development Files -->
+    <script src="client.js"></script>
+
+  </head>
+  <body ng-controller="AngularApp as note">
+
+    <form ng-submit="note.submitMessage()">
+      <input type="text" ng-model="note.message" placeholder="Message Goes Here"/>
+      <input type="submit" />
+    </form>
+
+    <div>
+      <ul>
+        <li ng-repeat="current in note.currentMessage track by $index">
+          Message is: {{ current }}
+        </li>
+      </ul>
+    </div>
+
+    <div ng-show="note.previous">
+      <span>Previous Messages are: </span>
+      <ul>
+        <li ng-repeat="previous in note.previousMessages track by $index">
+          {{ previous }}
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
