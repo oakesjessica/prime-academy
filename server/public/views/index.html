@@ -6,6 +6,7 @@
 
     <!-- Libraries/Framework -->
     <script src="vendor/angular/angular.min.js"></script>
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css">
     <!-- Development Files -->
     <script src="assets/scripts/client.min.js"></script>
 
@@ -22,7 +23,11 @@
     <div>
       <ul>
         <li ng-repeat="item in tc.tasksList">
-          {{item.task}}
+          {{ item.id }}     {{ item.task }}
+          <button ng-click="tc.completeTask(item)" >
+            Complete
+          </button>
+          <button ng-click="tc.deleteTask(item)">Delete</button>
         </li>
       </ul>
     </div>

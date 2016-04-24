@@ -63,4 +63,68 @@ router.get("/", function(req, res) {
   });
 });
 
+
+router.delete("/:id", function(req, res) {
+
+  pg.connect(connectionString, function(err, client, done) {
+    if (err) {
+      console.log("error deleting task", err);
+    } else {
+      var results = [];
+
+      var requestedID = req.params.id;
+      console.log("deleting task ID", requestedID);
+
+      var query = client.query("DELETE FROM tasks WHERE id = " + requestedID + " RETURNING *;");
+
+      query.on("error", function(err) {
+        console.log("error deleting task", err);
+        res.status(500).send(err);
+        process.exit(1);
+      });
+
+      query.on("row", function(row) {
+        results.push(row);
+      });
+
+      query.on("end", function() {
+        console.log("Success in deleting task");
+        res.send(results);
+        done();
+      });
+    }
+  });
+});
+
+router.put("/:id", function(req, res) {
+
+  pg.connect(connectionString, function(err, client, done) {
+    if (err) {
+      console.log("error changing complete status", err);
+    } else {
+      var requestedID = req.params.id;
+      var results = [];
+      console.log("completing task", requestedID);
+
+      var query = client.query("UPDATE tasks SET status = true " + "WHERE id = " + requestedID + " RETURNING *;");
+
+      query.on("error", function(err) {
+        console.log("Error changing status", err);
+        res.status(500).send(err);
+        process.exit(1);
+      });
+
+      query.on("row", function(row) {
+        results.push(row);
+      });
+
+      query.on("end", function() {
+        console.log("Successfully completed task");
+        res.send(results);
+        done();
+      });
+    }
+  });
+});
+
 module.exports = router;
