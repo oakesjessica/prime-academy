@@ -1,0 +1,13 @@
+li {
+  padding: 5px 0px;
+}
+
+.taskComplete {
+  color: red;
+  text-decoration: line-through;
+
+}
+
+.taskNotComplete {
+  color: black;
+}

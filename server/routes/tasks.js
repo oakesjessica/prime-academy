@@ -63,9 +63,7 @@ router.get("/", function(req, res) {
   });
 });
 
-
 router.delete("/:id", function(req, res) {
-
   pg.connect(connectionString, function(err, client, done) {
     if (err) {
       console.log("error deleting task", err);
