@@ -3,11 +3,16 @@ li {
 }
 
 .taskComplete {
-  color: red;
+  color: #D3D3D3;
   text-decoration: line-through;
 
 }
 
 .taskNotComplete {
   color: black;
+}
+
+.verifyText {
+  font-weight: bold;
+  color: red;
 }

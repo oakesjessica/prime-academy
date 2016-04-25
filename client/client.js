@@ -4,6 +4,8 @@ app.controller("TaskController", ["$http", function($http) {
   var vm = this;
   vm.task = {};
   vm.tasksList = [];
+  vm.uncompletedTasks = [];
+  vm.completedTasks = [];
   vm.taskID = 0;
   vm.isDisabled = false;
 
@@ -19,6 +21,13 @@ app.controller("TaskController", ["$http", function($http) {
   vm.getTasks = function() {
     $http.get("/tasks").then(function(serverResponse) {
       vm.tasksList = serverResponse.data;
+      vm.uncompletedTasks = vm.tasksList.filter(function(task) {
+        return task.status === false;
+      });
+
+      vm.completedTasks = vm.tasksList = vm.tasksList.filter(function(task) {
+        return task.status === true;
+      });
     });
   };
 

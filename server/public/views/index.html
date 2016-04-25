@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html ng-app="todoApp">
   <head>
     <meta charset="utf-8">
@@ -13,24 +13,40 @@
 
   </head>
   <body class="container-fluid" ng-controller="TaskController as tc">
+
+
     <div class="jumbotron">
       <h1 class="text-center">Task Manager</h1>
-
-      <form ng-submit="tc.submitTask()">
-        <label>Enter task</label>
-        <input type="text" ng-model="tc.task.todo" />
-        <input type="submit" />
-      </form>
+      <div class="text-center row">
+        <form ng-submit="tc.submitTask()">
+          <label>Enter task</label>
+          <input type="text" class="input-lg" ng-model="tc.task.todo" />
+          <button type="submit" class="btn-lg btn-success" title="Add task"><span class="glyphicon glyphicon-plus"></span></button>
+        </form>
+      </div>
     </div>  <!--jumbotron-->
-
-    <div>
-      <ul>
-        <li ng-repeat = "item in tc.tasksList">
-          <span ng-class="{taskComplete : item.status, taskNotComplete : !item.status}" >{{ item.task }}</span>
-          <input type="button" value="Complete" class="sm-btn btn-info" ng-click="tc.completeTask(item)" />
-          <input type="button" value="Delete" class="sm-btn btn-danger" ng-click="tc.deleteTask(item)" />
-        </li>
-      </ul>
+    <div class="row">
+      <div class="col-md-6">
+        Tasks To-Do, C'mon!
+        <ul>
+          <li ng-repeat = "item in tc.uncompletedTasks">
+            <span ng-class="{taskComplete : item.status, taskNotComplete : !item.status}" >{{ item.task }}</span>
+            <button type="button" class="btn btn-info" ng-click="tc.completeTask(item)" title="Complete task"><span class="glyphicon glyphicon-ok"></span></button>
+            <button type="button" class="btn btn-danger" ng-click="verify = !verify" title="Delete task" ng-hide="verify"><span class="glyphicon glyphicon-minus"></span></button>
+            <span class="verifyText" ng-show="verify">Really delete?</span>
+            <button type="button" class="btn btn-warning" ng-show="verify" ng-click="tc.deleteTask(item)">Delete Already!</button>
+            <button type="button" class="btn btn-info" ng-show="verify" ng-click="verify=!verify">No, Please keep</button>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h5>Tasks Completed, Good Job!!</h5>
+        <ul>
+          <li ng-repeat = "item in tc.completedTasks">
+            <span>{{ item.task }}</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
