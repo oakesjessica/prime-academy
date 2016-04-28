@@ -17,9 +17,8 @@ router.get("/", function(req, res) {
 /*Post new profile to MongoDB*/
 router.post("/", function(req, res) {
   console.log("Saving new hero", req.body);
-  var newHero = new Hero(req.body);
 
-  newHero.save(function(err) {
+  Hero.create(req.body, function(err) {
     if (err) {
       console.log("Issue saving to database with error", err);
       res.status(500).send(err);
@@ -27,7 +26,7 @@ router.post("/", function(req, res) {
       console.log("Hero profile saved successfully");
       res.sendStatus(200);
     }
-  }); //  save
+  });
 }); //  post
 
 /*Delete profile from database by its _id*/
