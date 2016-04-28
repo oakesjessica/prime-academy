@@ -1,6 +1,8 @@
+////////  HEROES ROUTER  ////////
 var router = require("express").Router();
 var Hero = require("../../models/hero");
 
+/*Find all entries in database and send to client*/
 router.get("/", function(req, res) {
   Hero.find({}, function(err, heroes) {
     if (err) {
@@ -9,11 +11,12 @@ router.get("/", function(req, res) {
     } else {
       res.send(heroes);
     }
-  });
-});
+  }); //  Hero.find
+}); //  get
 
+/*Post new profile to MongoDB*/
 router.post("/", function(req, res) {
-  console.log("new hero", req.body);
+  console.log("Saving new hero", req.body);
   var newHero = new Hero(req.body);
 
   newHero.save(function(err) {
@@ -24,11 +27,12 @@ router.post("/", function(req, res) {
       console.log("Hero profile saved successfully");
       res.sendStatus(200);
     }
-  });
-});
+  }); //  save
+}); //  post
 
+/*Delete profile from database by its _id*/
 router.delete("/:id", function(req, res) {
-  console.log("Deleting profile request received.");
+  console.log("Deleting requested profile id", req.params.id);
 
   Hero.findOneAndRemove({_id: req.params.id}, function(err, hero) {
     if (err) {
@@ -38,8 +42,8 @@ router.delete("/:id", function(req, res) {
       console.log("Hero profile deleted", hero);
       res.sendStatus(200);
     }
-  });
-});
+  }); //  findOneAndRemove
+}); //  delete
 
 
 module.exports = router;
