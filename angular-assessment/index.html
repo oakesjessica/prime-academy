@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="angularApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Assessment App</title>
+
+    <!-- Libraries/Framework -->
+    <link rel="stylesheet" href="bootstrap.min.css"/>
+    <script src="angular.min.js"></script>
+
+    <!-- Development Files -->
+    <script src="client.js"></script>
+
+  </head>
+  <body ng-controller="AngularApp as note">
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <h1 class="text-center">Prime Angular Assessment</h1>
+        <div class="text-center">
+          <form ng-submit="note.submitMessage()">
+            <input type="text" ng-model="note.message" placeholder="Message Goes Here"/>
+            <input class="btn btn-info" type="submit" />
+          </form>
+          <p style="color:red" ng-show="note.empty">Please enter a message!</p>
+        </div>  <!--submit div-->
+      </div>  <!--jumbotron div-->
+
+      <div class="col-md-6">
+          <span ng-repeat="current in note.currentMessage track by $index">
+            <span class="title"><strong>Message is:</strong></span> {{ current }}
+          </span>
+      </div>  <!--current message-->
+
+      <div class="col-md-6" ng-show="note.previous">
+        <span class="title"><strong>Previous Messages are: </strong></span>
+        <ol>
+          <li ng-repeat="previous in note.previousMessages track by $index">
+            {{ previous }}
+          </li>
+        </ol>
+      </div>  <!--previous messages-->
+    </div>  <!--container-->
+  </body>
+</html>
