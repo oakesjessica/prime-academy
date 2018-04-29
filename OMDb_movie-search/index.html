@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OMDB Movie Search</title>
+
+    <!-- Libraries/Framework -->
+    <script src="jquery-2.2.2.min.js"></script>
+
+    <!-- Development Files -->
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+
+
+  </head>
+  <body>
+    <header>
+      <section id="logo">
+        <h1>OMDb</h1>
+        <h2>Movie Search!</h2>
+      </section>
+      <section id="userInput">
+        <input type="search" id="title" placeholder="Title (required)" />
+        <input type="search" id="year" placeholder="Year (opt)" />
+        <select name="omdb-type" id="type">
+          <option selected></option>
+          <option>Movie</option>
+          <option>Series</option>
+          <option>Episode</option>
+        </select>
+        <button id="search" title="Search for your movie!">Search</button>
+        <button id="hideMovies" title="Hide all movies from screen">Hide Movies</button>
+        <button id="clear" title="Clear displayed movies from search">Clear Display</button>
+        <button id="faqButton" title="Coming soon">Show FAQ</button>
+      </section>
+    </header>
+    <section class="movies">
+      <section id="myDisplay"></section>
+      <section id="searchDisplay"></section>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+@import url(https://fonts.googleapis.com/css?family=Play:700);
+@import url(https://fonts.googleapis.com/css?family=Orbitron:900);
+
+html, body, p, h1, h2, h3 {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: arial, sans-serif;
+  background: #EEEEEE;
+}
+
+h1, h2 {
+  font-family: "Orbitron";
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 12px;
+}
+
+header {
+  width: 100%;
+  background: #808080;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  padding: 0px 0px 0px 0px;
+}
+
+#logo {
+  display: inline;
+  float: left;
+  padding: 5px;
+  height: 40px;
+  margin: 5px 0px 0px 30px;
+}
+
+#userInput {
+  position: relative;
+  float: right;
+  display: inline;
+  margin: 11px 0px 0px 0px;
+  padding: 0px 20px 0px 0px;
+}
+
+.movies {
+  margin-top: 55px;
+  position: relative;
+}
+
+#myDisplay, #searchDisplay {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movies h3 {
+  font-family: Herculanum;
+  font-size: 19px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.movies p {
+  padding: 5px 0px 0px;
+  font-size: 12px;
+}
+
+.movies img {
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#myDisplay section, #searchDisplay section {
+  width: 350px;
+  margin: 10px;
+  padding: 5px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 5px #008080;
+}
+
+input[type="search"], select, button {  /*All search fields*/
+  vertical-align: top;
+  border-radius: 5px;
+  height: 35px;
+  margin: 2px 0px;
+  border: none;
+  outline: none;
+}
+
+button, #type { /*buttons/type font*/
+  font-family: "Play";
+}
+
+button {  /*buttons*/
+  border-radius: 5px;
+  background: #FFFFFF;
+  border: none;
+  outline: none;
+}
+
+#title {  /*Movie title search input*/
+  width: 250px;
+}
+
+#year { /*Year search input*/
+  width: 75px;
+}
+
+#search { /*Search button*/
+  width: 70px;
+  margin-right: 200px;
+}
+
+#hideMovies, #clear, #faqButton { /*Show/Hide Movies, Clear, and FAQ button*/
+  width: 50px;
+}
+
+input[type="search"] {
+  font-size: 11px;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.slideButton {  /*Dynamically created slide button*/
+  display: block;
+  margin: 0 auto;
+  margin-top: 3px;
+  text-align: center;
+  height: 20px;
+  width: 90px;
+  background: #989898;
+}
+
+button, .slideButton {
+  transition: background 0.15s ease-in, color 0.15s ease-in;
+}
+
+button:hover {  /*Header button hovers*/
+  background: #4DA6A6;
+  color: 	#F5F5F5;
+}
+
+.slideButton:hover {
+  background: #008080;
+  color: #FFFFFF;
+}
