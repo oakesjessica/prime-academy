@@ -1,0 +1,52 @@
+html, body {  /*initialize html/body*/
+  margin: 0px;
+  padding: 0px;
+  font: inherit;
+}
+
+body {  /*body*/
+  font-family: arial, sans-serif;
+  background-image: url(http://www.hd-freewallpapers.com/upload/eagle-image/bald-eagle-flag-images-wallpaper.jpg);
+  background-size: cover;
+  background-color: cover;
+  background-repeat: no-repeat;
+}
+
+h1, h2 {  /*headings in header*/
+  margin: 0 auto;
+  text-align: center;
+}
+
+#buttons {  /*buttons div*/
+  display: flex;
+  justify-content: center;
+}
+
+#show, #winner {  /*show/winner buttons*/
+  margin: 0px 0px 0px 30px;
+}
+
+#displayCandidates, #displayWinner {  /*display div's*/
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+h3 {  /*Candidate header*/
+  text-align: center;
+}
+
+#dem, #rep {  /*party div's*/
+  background: #FDFDF0;
+  display: inline-block;
+  min-width: 200px;
+  margin: 0px 0px 0px 40px;
+}
+
+#displayWinner {  /*winner div*/
+  font-size: 40px;
+  font-weight: bold;
+  margin: 300px 0px 0px 0px;
+  min-width: 400px;
+}
