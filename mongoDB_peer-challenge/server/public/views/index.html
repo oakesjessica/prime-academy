@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="hwApp">
+  <head>
+    <meta charset="utf-8">
+    <title>MongoDB Peer Challenge</title>
+
+    <!-- Libraries/Frameworks -->
+    <script src="/vendor/angular/angular.min.js"></script>
+    <script src="/assets/scripts/client.min.js"></script>
+
+    <!-- Development Files -->
+
+  </head>
+  <body>
+    <h1>Student Assignments Database</h1>
+
+    <div ng-controller="AssignmentController">
+      <form novalidate>
+        Student ID: <input type="number" ng-model="assignment.id" /><br />
+        Assignment Number: <input type="number" ng-model="assignment.assignment_number" /><br />
+        Name: <input type="text" ng-model="assignment.student_name" /><br />
+        Score: <input type="number" ng-model="assignment.score" /><br />
+        Date Completed: <input type="date" ng-model="assignment.date_completed" /><br />
+        <input type="submit" ng-click="add(assignment)" value="Save" />
+      </form> <!--Save-->
+
+      {{ assignment }}
+      <h4>Assignments</h4>
+      <ul>
+        <li ng-repeat="hw in assignments">
+          ID: {{ hw.id }} <br />
+          HW #: {{ hw.assignment_number }} <br />
+          Name: {{ hw.student_name }} <br />
+          Score: {{ hw.score }} <br />
+          Date Completed: {{ student.date_completed }}
+        </li>
+      </ul>
+    </div>  <!--AssignmentController-->
+  </body>
+</html>
