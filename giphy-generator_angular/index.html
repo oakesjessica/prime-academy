@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="giphyApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Giphy Generator Angular</title>
+
+    <!-- Libraries/Framework -->
+    <script src="angular.min.js"></script>
+
+    <!-- Development Files -->
+    <script src="app.js"></script>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body ng-controller="GiphyController">
+    <header>
+      <h1>Prime Giphy Generator</h1>
+      <h2>Search for a random giph, a random giph with a specific tag, or just a regular search!</h2>
+      <section class="userSearch">
+        <div class="search">
+          <input id="tagInput" type="search" placeholder="Random/Tag Search" ng-model="tagGiph"/>
+          <button id="randomButton" ng-click="randomGiph()">Random Giph</button>
+        </div>  <!--div random/tag search-->
+        <div class="search">
+          <input id="regInput" type="search" placeholder="Regular Search" ng-model="regGiph"/>
+          <button id="searchButton" ng-click="searchGiph()">Get Giphs</button>
+        </div>  <!--div regular search-->
+      </section>  <!--section userSearch-->
+    </header>
+    <section class="otherButtons">
+      <button id="faq" ng-click="faq">FAQ</button>
+      <button id="clear" ng-click="clear">Clear Giph's</button>
+    </section>  <!--section otherButtons-->
+    <div class="display" ng-model="displayGiphs" ngShow="random" ng-repeat="giphy in giphyPics track by $index">
+      <img ng-src="{{giphy}}" />
+    </div>  <!--div class="display"-->
+  </body>
+</html>
