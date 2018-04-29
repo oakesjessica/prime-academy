@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/assets/scripts/client.min.js"></script>
+  <link href="/views/styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:400,900|Bangers|Architects+Daughter|Kaushan+Script|Satisfy|Economica:400,700|Montez" rel="stylesheet" type="text/css">
+  <meta charset="utf-8">
+  <title>Twitter Generator</title>
+</head>
+
+<body ng-controller="MainController">
+  <div class="generator">
+    <button ng-click="randomize()">Generate</button>
+
+  </div>
+  <!-- close generator -->
+
+  <div class="allTheThings">
+    <div class="twitterName" ng-repeat="name in randomNames">
+      <a ng href="http://www.twitter.com/{{name}}" target="_blank">@{{name}}</a>
+      <input ng-model="checked" type = "checkbox">
+      <span ng-show="checked">
+        Not available
+      </span>
+    </div>
+    <!-- close twitterName -->
+  </div>
+  <!-- close allTheThings -->
+
+</body>
+
+</html>
