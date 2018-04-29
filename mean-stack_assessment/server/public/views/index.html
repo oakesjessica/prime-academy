@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="heroApp">
+  <head>
+    <meta charset="utf-8">
+    <title>MEAN Assessment</title>
+
+    <!-- Libraries/Frameworks -->
+    <script src="vendors/angular/angular.min.js"></script>
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Development Files -->
+    <script src="assets/scripts/client.min.js"></script>
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+  </head>
+  <body ng-controller="HeroController as hero">
+    <h1 class="text-center">Department of Superhero Knowledge Database</h1>
+    <form ng-submit="hero.saveProfile()">
+      <ul style="list-style-type:none">
+        <li>
+          <label>Alias</label>
+          <input type="text" ng-model="hero.profile.alias"/>
+        </li>
+        <li>
+          <label>First Name</label>
+          <input type="text" ng-model="hero.profile.first_name"/>
+        </li>
+        <li>
+          <label>Last Name</label>
+          <input type="text" ng-model="hero.profile.last_name"/>
+        </li>
+        <li>
+          <label>City</label>
+          <input type="text" ng-model="hero.profile.city"/>
+        </li>
+        <li>
+          <select ng-model="hero.profile.power_type" ng-options="power for power in hero.powerList"></select>
+        </li>
+        <input class="btn btn-lg btn-success" type="submit"/>
+      </ul>
+    </form>
+
+    <div>
+      <ul>
+        <li ng-repeat="superhero in hero.profileList">
+          <span><strong>Alias:</strong> {{superhero.alias}}</span>
+          <span><strong>Name:</strong> {{superhero.first_name}} {{superhero.last_name}}</span>
+          <span><strong>City:</strong> {{superhero.city}}</span>
+          <span><strong>Power:</strong> {{superhero.power_type}}</span>
+          <input class="btn btn-xs btn-danger" type="button" value="Delete" ng-click="hero.deleteProfile(superhero)"/>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
