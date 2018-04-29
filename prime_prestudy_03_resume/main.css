@@ -1,0 +1,106 @@
+html, header, p, ul, li, footer {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    font-size: 100%;
+    font: inherit;
+}
+
+html {
+    font-family: arial, verdana;
+    background: #99ccff url(background.jpg);
+    background-size: cover;
+}
+
+#hideshowbuttons {
+	position: relative;
+	text-align: center;
+	padding: 10px 0px;
+}
+
+button:hover {
+	background-color: #ffcc99;
+}
+
+header {
+	background-color: #ffffee;
+	display: block;
+	margin: 0px 50px;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.resbody {
+	background-color: #ffffee;
+	display: block;
+	margin: 0px 50px;
+	border-radius: 0px 0px 5px 5px;
+	padding: 10px;
+}
+
+.personalinfo {
+	text-align: center;
+	padding-bottom: 5px;
+	border-bottom: 2px solid black;
+	border-radius: 5px 5px 0px 0px;
+}
+
+.personalinfo h1, h2, h3 {
+    margin: 10px 0px 0px;
+    font-variant: small-caps;
+}
+
+h3 {
+    border-bottom: 1px solid black;
+}
+
+h5 {
+	margin: 10px 0px 0px;
+	padding: 0px 0px 0px 10px;
+}
+
+p {
+    font-size: 13px;
+    padding: 0px 25px 0px 10px;
+}
+
+.personalinfo img {
+	width: 150px;
+	height: 150px;
+	float: right;
+	border: 1px solid;
+	transform: rotate(9deg);
+}
+
+.personalinfo h1, .personalinfo li, footer li {
+	list-style-type: none;
+}
+
+footer {
+	padding: 20px 0px 0px;
+	text-align: center;
+}
+
+.experience p, .cges p {
+    font-style: italic;
+    padding: 0px 25px 0px 10px;
+}
+
+.experience ul {
+    padding: 0px 25px 0px;
+}
+
+li {
+    font-size: 13px;
+}
+
+.cges ul {
+	padding: 0px 25px 8px;
+}
+
+ul {
+    padding: 5px 25px 0px;
+}
+
+.hide {
+	display: none;
+}
