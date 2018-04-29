@@ -1,0 +1,18 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.well {
+  margin: 30px 15px;
+}
+
+.description {
+  padding: 10px 0px;
+}
+
+.descripInput {
+  width: 40%;
+  min-height: 100px;
+  display: inline;
+}
