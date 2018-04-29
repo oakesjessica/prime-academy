@@ -1,0 +1,18 @@
+html, header {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	font-size: 100%;
+	font: inherit;
+}
+
+html {
+	font-family: Arial, Sans-Serif;
+}
+
+h1 {
+	font-size: 50px;
+	margin: 0 auto;
+	color: #3366FF;
+	text-align: center;
+}
