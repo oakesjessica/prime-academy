@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+/*.groupheadings {
+  display: inline-block;
+}*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 100px;
+  background: #EEE;
+}
+
+.groups {
+  background: #FFF;
+  padding: 20px;
+  margin: 20px;
+  box-shadow: 0 0 5px #888888;
+  min-width: 300px;
+}
+
+#display {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.group {
+  display: inline;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background: black;
+  position: absolute;
+  top: 0;
+}
+
+.button {
+  display: inline;
+}
+
+button:hover {
+  background: #004d4d;
+}
+
+.groupSelector {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+button {
+  background: teal;
+  color: white;
+  font-size: 16px;
+  border-radius: 3px;
+  border: none;
+  width: 40px;
+  height: 40px;
+  transition: background .3s ease-in;
+  outline: none;
+}
+
+#generate {
+  float: right;
+  margin-right: 40px;
+  margin-top: -40px;
+}
+
+#generate button {
+  width: 100px;
+
+}
+
+h1 {
+  border-bottom: 2px solid teal;
+  padding-bottom: 5px;
+}
